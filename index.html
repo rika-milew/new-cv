@@ -7,16 +7,75 @@
     <title>Erika Milevskaya</title>
     <meta name="description" content="Web-developer, about me, my works" />
     <!-- Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
     <!-- Icon -->
-    <link href="images/icon-planet.svg" rel="icon" />
+    <link href="assets/icons/icon-planet.svg" rel="icon" />
     <!-- Styles -->
     <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
-    <header>1</header>
-    <main></main>
-    <footer></footer>
+    <div id="root">
+      <div id="starfield"></div>
 
-    <script></script>
+      <div class="orbit-container">
+        <div class="planet"></div>
+      </div>
+      <header class="header">
+        <div class="container">
+          <div class="logo">&lt;Div /&gt;</div>
+          <nav class="header__menu">
+            <ul class="header__list">
+              <li><a href="#about-me">About</a></li>
+              <li><a href="#skills">Skills</a></li>
+              <li><a href="#portfolio">Portfolio</a></li>
+              <li><a href="#education">Education</a></li>
+              <li><a href="#contacts">Contacts</a></li>
+            </ul>
+          </nav>
+          <div class="header__burger">
+            <span></span>
+          </div>
+        </div>
+      </header>
+      <main>
+        <div class="moon"></div>
+        <section id="hero" class="section">
+          <div class="container">
+            <p class="text-1">Hello, I'm</p>
+            <h1 class="gradient-title-animated">Erika Milevskaya</h1>
+            <h3>Frontend Developer</h3>
+            <p class="text-2">
+              Building interfaces that inspire. React, TypeScript, and a touch of cosmic magic ✨
+            </p>
+            <div class="button-container">
+              <button class="button color-button">About Me</button>
+              <button class="button transparent-button">Download CV</button>
+            </div>
+          </div>
+        </section>
+        <section id="about">
+          <div class="container"></div>
+        </section>
+        <section id="skills">
+          <div class="container"></div>
+        </section>
+        <section id="portfolio">
+          <div class="container"></div>
+        </section>
+        <section id="education">
+          <div class="container"></div>
+        </section>
+        <section id="contacts">
+          <div class="container"></div>
+        </section>
+      </main>
+      <footer></footer>
+    </div>
+    <script src="scripts/script.js"></script>
   </body>
 </html>
