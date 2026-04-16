@@ -1,11 +1,3 @@
-document.addEventListener('DOMContentLoaded', () => {
-  showModal({
-    type: 'error',
-    title: 'Message sent',
-    message: "Thanks for reaching out. I'll get back to you soon.",
-  });
-});
-
 // burger menu
 
 const burger = document.querySelector('.header__burger');
