@@ -27,14 +27,14 @@
       </div>
       <header class="header">
         <div class="container">
-          <div class="logo">&lt;Div /&gt;</div>
+          <div class="logo">&lt;Dev /&gt;</div>
           <nav class="header__menu">
             <ul class="header__list">
-              <li><a href="#about-me">About</a></li>
-              <li><a href="#skills">Skills</a></li>
-              <li><a href="#portfolio">Portfolio</a></li>
-              <li><a href="#education">Education</a></li>
-              <li><a href="#contacts">Contacts</a></li>
+              <li><a href="#about-me" class="header__link">About</a></li>
+              <li><a href="#skills" class="header__link">Skills</a></li>
+              <li><a href="#portfolio" class="header__link">Portfolio</a></li>
+              <li><a href="#education" class="header__link">Education</a></li>
+              <li><a href="#contacts" class="header__link">Contacts</a></li>
             </ul>
           </nav>
           <div class="header__burger">
@@ -53,10 +53,14 @@
               Building interfaces that inspire. React, TypeScript, and a touch of cosmic magic ✨
             </p>
             <div class="button-container">
-              <button class="button color-button">About Me</button>
-              <button class="button transparent-button">Download CV</button>
+              <a href="#about" class="button color-button">About Me</a>
+              <a href="#contacts" class="button transparent-button">
+  Contact Me
+</a>
+
             </div>
           </div>
+          <a href="#about"><img src="assets/icons/arrow.svg" alt="" class="arrow-icon"></a>
         </section>
         <section id="about">
           <div class="container">
@@ -94,38 +98,37 @@
               <div class="card">
                 <h4>Frontend</h4>
                 <div class="badge-container">
-                  <div class="badge">React</div>
-                  <div class="badge">TypeScript</div>
-                  <div class="badge">JavaScript</div>
-                  <div class="badge">HTML5</div>
-                  <div class="badge">CSS3</div>
-                  <div class="badge">Zustand</div>
+                  <div class="badge skill-badge">React</div>
+                  <div class="badge skill-badge">TypeScript</div>
+                  <div class="badge skill-badge">JavaScript</div>
+                  <div class="badge skill-badge">HTML5</div>
+                  <div class="badge skill-badge">CSS3</div>
+                  <div class="badge skill-badge">Zustand</div>
                 </div>
               </div>
               <div class="card">
                 <h4>Tools</h4>
                 <div class="badge-container">
-                  <div class="badge">Git</div>
-                  <div class="badge">GitHub</div>
-                  <div class="badge">Vite</div>
-                  <div class="badge">Webpack</div>
-                  <div class="badge">VS Code</div>
-                  <div class="badge">Chrome DevTools</div>
-                  <div class="badge">Figma</div>
-
-                  <div class="badge">ESLint</div>
-                  <div class="badge">Prettier</div>
-                  <div class="badge">Biome</div>
+                  <div class="badge skill-badge">Git</div>
+                  <div class="badge skill-badge">GitHub</div>
+                  <div class="badge skill-badge">Vite</div>
+                  <div class="badge skill-badge">Webpack</div>
+                  <div class="badge skill-badge">VS Code</div>
+                  <div class="badge skill-badge">Chrome DevTools</div>
+                  <div class="badge skill-badge">Figma</div>
+                  <div class="badge skill-badge">ESLint</div>
+                  <div class="badge skill-badge">Prettier</div>
+                  <div class="badge skill-badge">Biome</div>
                 </div>
               </div>
               <div class="card">
                 <h4>Other</h4>
                 <div class="badge-container">
-                  <div class="badge">REST API</div>
-                  <div class="badge">Node.js</div>
-                  <div class="badge">Markdown</div>
-                  <div class="badge">Vitest</div>
-                  <div class="badge">Responsive Design</div>
+                  <div class="badge skill-badge">REST API</div>
+                  <div class="badge skill-badge">Node.js</div>
+                  <div class="badge skill-badge">Markdown</div>
+                  <div class="badge skill-badge">Vitest</div>
+                  <div class="badge skill-badge">Responsive Design</div>
                 </div>
               </div>
             </div>
@@ -145,6 +148,7 @@
                   <div class="badge portfolio-badge">Typescript</div>
                   <div class="badge portfolio-badge">Node.js</div>
                   <div class="badge portfolio-badge">Zustand</div>
+                  <div class="badge portfolio-badge">REST API</div>
                 </div>
                 <div class="portfolio__links">
                   <a
@@ -165,8 +169,70 @@
                   </a>
                 </div>
               </div>
-              <div class="card"></div>
-              <div class="card"></div>
+              <div class="card portfolio-card">
+                <h4 class="portfilio-heading">Puzzle Game</h4>
+                <p>
+                  Language learning mini-game where you assemble sentences from mixed-up words.
+                </p>
+                <div class="badge-container portfolio-badge-container">
+                  <div class="badge portfolio-badge">HTML</div>
+                  <div class="badge portfolio-badge">CSS</div>
+                  <div class="badge portfolio-badge">Typescript</div>
+                  <div class="badge portfolio-badge">Vite</div>
+                  <div class="badge portfolio-badge">ESLint</div>
+                  <div class="badge portfolio-badge">Prettier</div>
+                </div>
+                <div class="portfolio__links">
+                  <a
+                    href="https://github.com/rolling-scopes-school/rika-milew-JSFE2025Q3/tree/rss-puzzle/rss-puzzle"
+                    target="_blank"
+                    class="portfolio__link"
+                  >
+                    <div class="portfolio-icon github"></div>
+                    <div>GitHub</div>
+                  </a>
+                  <a
+                    href="https://rolling-scopes-school.github.io/rika-milew-JSFE2025Q3/rss-puzzle/"
+                    target="_blank"
+                    class="portfolio__link"
+                  >
+                    <div class="portfolio-icon link"></div>
+                    <div>Demo</div>
+                  </a>
+                </div>
+              </div>
+              <div class="card portfolio-card">
+                <h4 class="portfilio-heading">NFT Landing Page</h4>
+                <p>
+                  A responsive one-page website showcasing an NFT collection.
+                </p>
+                <div class="badge-container portfolio-badge-container">
+                  <div class="badge portfolio-badge">HTML</div>
+                  <div class="badge portfolio-badge">CSS</div>
+                  <div class="badge portfolio-badge">JavaScript</div>
+                  <div class="badge portfolio-badge">Responsive Design</div>
+                  <div class="badge portfolio-badge">CSS Flexbox</div>
+                  <div class="badge portfolio-badge">CSS Grid</div>
+                </div>
+                <div class="portfolio__links">
+                  <a
+                    href="https://github.com/rika-milew/nft"
+                    target="_blank"
+                    class="portfolio__link"
+                  >
+                    <div class="portfolio-icon github"></div>
+                    <div>GitHub</div>
+                  </a>
+                  <a
+                    href="https://rika-milew.github.io/nft/"
+                    target="_blank"
+                    class="portfolio__link"
+                  >
+                    <div class="portfolio-icon link"></div>
+                    <div>Demo</div>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </section>
