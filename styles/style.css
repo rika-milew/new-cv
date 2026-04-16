@@ -140,17 +140,15 @@ h2 {
   z-index: 5;
 }
 
-
 @media (max-width: 768px) {
-
-.moon {
-width: 8rem;
+  .moon {
+    width: 8rem;
 
     height: 8rem;
-        top: 5rem;
+    top: 5rem;
 
     right: 2.5rem;
-}
+  }
 }
 
 @keyframes moon-glow {
@@ -184,12 +182,9 @@ width: 8rem;
 }
 
 @media (max-width: 768px) {
-
-.planet {
-
-  display: none;
-
-}
+  .planet {
+    display: none;
+  }
 }
 
 @keyframes orbit {
@@ -415,22 +410,21 @@ h3 {
   }
 }
 
-
 .arrow-icon {
   position: absolute;
-      left: 50%;
-      bottom: 2rem;
-    animation: float 6s ease-in-out infinite;
-} 
-
+  left: 50%;
+  bottom: 2rem;
+  animation: float 6s ease-in-out infinite;
+}
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
-}
-50% {
+  }
+  50% {
     transform: translateY(-20px);
-}
+  }
 }
 
 /* about */
@@ -524,7 +518,6 @@ h3 {
   }
 }
 
-
 /* skills */
 
 #skills .container {
@@ -559,9 +552,7 @@ h3 {
   .card:hover {
     border-color: hsl(var(--primary) / 0.4);
   }
-
 }
-
 
 .card:active {
   border-color: hsl(var(--primary) / 0.4);
@@ -599,21 +590,18 @@ h4 {
 }
 
 @media (hover: hover) and (pointer: fine) {
-
-   .skill-badge:hover {
-    background-color: hsl(var(--primary) / .2);
-    border-color: hsl(var(--primary) / .4);
-    box-shadow: 0 0 qwpx hsl(263 84% 65% / .3);
-
-   }
+  .skill-badge:hover {
+    background-color: hsl(var(--primary) / 0.2);
+    border-color: hsl(var(--primary) / 0.4);
+    box-shadow: 0 0 20px hsl(263 84% 65% / 0.3);
+  }
 }
 
- .skill-badge:active {
-    background-color: hsl(var(--primary) / .2);
-    border-color: hsl(var(--primary) / .4);
-    box-shadow: 0 0 qwpx hsl(263 84% 65% / .3);
-
-   }
+.skill-badge:active {
+  background-color: hsl(var(--primary) / 0.2);
+  border-color: hsl(var(--primary) / 0.4);
+  box-shadow: 0 0 20px hsl(263 84% 65% / 0.3);
+}
 
 /* portfolio  */
 
@@ -837,11 +825,9 @@ h4 {
 }
 
 @media screen and (max-width: 820px) {
-
-.contacts-container {
- 
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-}
+  .contacts-container {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
 }
 
 #contacts p {
@@ -934,24 +920,40 @@ h4 {
   width: 100%;
   margin: 0;
   padding: 0.5rem 0.75rem;
-
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-family: inherit;
   font-feature-settings: inherit;
   font-variation-settings: inherit;
   letter-spacing: inherit;
-  color: hsl(var(--muted-foreground));
+  color: hsl(var(--foreground));
   line-height: 1.5;
   border: 1px solid hsl(var(--border) / 0.5);
   border-radius: calc(var(--radius) - 2px);
   background-color: hsl(var(--card) / 0.5);
 }
 
+.form__item input:focus,
+.form__item textarea:focus {
+  outline: none;
+
+  border-color: hsl(var(--primary) / 0.6);
+
+  box-shadow:
+    0 0 0 2px hsl(var(--background)),
+    0 0 0 4px hsl(var(--primary));
+}
+
 .form__item input::placeholder,
 .form__item textarea::placeholder {
   color: hsl(var(--muted-foreground));
   line-height: 1.5;
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill {
+  -webkit-text-fill-color: hsl(var(--foreground));
+  transition: background-color 9999s ease-in-out 0s;
 }
 
 .form__item input {
@@ -961,6 +963,31 @@ h4 {
 .form__item textarea {
   min-height: 80px;
   resize: none;
+}
+
+.message-textarea::-webkit-scrollbar {
+  width: 8px;
+}
+
+.message-textarea::-webkit-scrollbar-track {
+  background: hsl(var(--primary) / 0.3);
+  border-radius: 4px;
+}
+
+.message-textarea::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.5);
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.message-textarea::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.8);
+}
+
+/* Firefox */
+.message-textarea {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--primary) / 0.5) hsl(var(--muted) / 0.3);
 }
 
 .button-icon {
@@ -1154,7 +1181,7 @@ h4 {
 
   .header__menu {
     position: fixed;
-     top: 52px;
+    top: 52px;
     right: -100%;
     display: block;
     width: 100%;
@@ -1163,7 +1190,7 @@ h4 {
     overflow: auto;
     text-align: center;
     opacity: 0;
-    
+
     transition:
       right 0.5s cubic-bezier(0.4, 0, 0.2, 1),
       opacity 0.5s ease;
@@ -1174,11 +1201,11 @@ h4 {
     top: 52px;
     right: 0;
     opacity: 1;
-background-color: transparent;
+    background-color: transparent;
     transition:
       right 0.5s cubic-bezier(0.4, 0, 0.2, 1),
       opacity 0.5s ease;
-      z-index: 100;
+    z-index: 100;
   }
 
   .header__list {
@@ -1191,4 +1218,92 @@ background-color: transparent;
     padding: 0.5rem 0;
     font-weight: 600;
   }
+}
+
+/* modal  */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: hsl(0 0% 0% / 0.6);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 999;
+}
+
+body.lock {
+  overflow: hidden;
+}
+
+.modal.show {
+  display: flex;
+  opacity: 1;
+  pointer-events: all;
+  padding: 1rem;
+}
+
+.modal__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 24rem;
+  background: hsl(263 50% 14% / 0.95);
+  backdrop-filter: blur(12px);
+  background-color: hsl(var(--card) / 0.95);
+  border: 1px solid hsl(var(--primary) / 0.3);
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+.close-icon {
+  position: absolute;
+  display: block;
+  top: 1rem;
+  right: 1rem;
+  width: 1rem;
+  height: 1rem;
+  -webkit-mask-image: url(../assets/icons/cross.svg);
+  mask-image: url(../assets/icons/cross.svg);
+  background-color: hsl(var(--muted-foreground));
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+
+  transition: background-color var(--transition-duration) var(--transition-timing-function);
+  cursor: pointer;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .close-icon:hover {
+    background-color: hsl(var(--foreground));
+  }
+}
+
+.close-icon:active {
+  background-color: hsl(var(--foreground));
+}
+
+#modal-heading {
+  letter-spacing: -0.025em;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  font-family: 'Space Grotesk', sans-serif;
+  color: hsl(var(--primary));
+}
+
+#modal-text {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: hsl(var(--muted-foreground));
 }

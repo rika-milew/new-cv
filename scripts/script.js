@@ -1,3 +1,11 @@
+document.addEventListener('DOMContentLoaded', () => {
+  showModal({
+    type: 'error',
+    title: 'Message sent',
+    message: "Thanks for reaching out. I'll get back to you soon.",
+  });
+});
+
 // burger menu
 
 const burger = document.querySelector('.header__burger');
@@ -89,3 +97,76 @@ for (let i = 0; i < STAR_COUNT; i++) {
 
   starfield.appendChild(star);
 }
+
+// modal
+
+const modal = document.getElementById('modal');
+const modalHeading = document.getElementById('modal-heading');
+const modalText = document.getElementById('modal-text');
+const modalImg = document.querySelector('.modal__content img');
+const closeButton = document.getElementById('modal-close');
+const closeIcon = document.getElementById('close-icon');
+
+function showModal({ type, title, message }) {
+  modal.classList.add('show');
+  document.body.classList.add('lock');
+
+  modalHeading.textContent = title;
+  modalText.textContent = message;
+
+  modalImg.alt = type === 'success' ? 'Success' : 'Error';
+
+  if (type === 'success') {
+    modalImg.src = '/assets/icons/check-icon.svg';
+  }
+
+  if (type === 'error') {
+    modalImg.src = '/assets/icons/cross-icon.svg';
+  }
+}
+
+function hideModal() {
+  modal.classList.remove('show');
+  document.body.classList.remove('lock');
+}
+
+closeButton.addEventListener('click', hideModal);
+
+closeIcon.addEventListener('click', hideModal);
+
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) hideModal();
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') hideModal();
+});
+
+// form
+
+import emailjs from '@emailjs/browser';
+
+const form = document.getElementById('contact-form');
+
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  emailjs
+    .sendForm('service_97fgd48', 'template_u4qq9jc', this, '3MmIo83jDJ5Rk45da')
+    .then(() => {
+      showModal({
+        type: 'success',
+        title: 'Message sent',
+        message: "Thanks for reaching out. I'll get back to you soon.",
+      });
+      form.reset();
+    })
+    .catch((error) => {
+      showModal({
+        type: 'error',
+        title: 'Something went wrong',
+        message: 'Please try again later ✖',
+      });
+      console.error('Error:', error);
+    });
+});

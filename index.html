@@ -54,13 +54,10 @@
             </p>
             <div class="button-container">
               <a href="#about" class="button color-button">About Me</a>
-              <a href="#contacts" class="button transparent-button">
-  Contact Me
-</a>
-
+              <a href="#contacts" class="button transparent-button"> Contact Me </a>
             </div>
           </div>
-          <a href="#about"><img src="assets/icons/arrow.svg" alt="" class="arrow-icon"></a>
+          <a href="#about"><img src="assets/icons/arrow.svg" alt="" class="arrow-icon" /></a>
         </section>
         <section id="about">
           <div class="container">
@@ -171,9 +168,7 @@
               </div>
               <div class="card portfolio-card">
                 <h4 class="portfilio-heading">Puzzle Game</h4>
-                <p>
-                  Language learning mini-game where you assemble sentences from mixed-up words.
-                </p>
+                <p>Language learning mini-game where you assemble sentences from mixed-up words.</p>
                 <div class="badge-container portfolio-badge-container">
                   <div class="badge portfolio-badge">HTML</div>
                   <div class="badge portfolio-badge">CSS</div>
@@ -203,9 +198,7 @@
               </div>
               <div class="card portfolio-card">
                 <h4 class="portfilio-heading">NFT Landing Page</h4>
-                <p>
-                  A responsive one-page website showcasing an NFT collection.
-                </p>
+                <p>A responsive one-page website showcasing an NFT collection.</p>
                 <div class="badge-container portfolio-badge-container">
                   <div class="badge portfolio-badge">HTML</div>
                   <div class="badge portfolio-badge">CSS</div>
@@ -352,7 +345,7 @@
                   opportunities.
                 </p>
                 <div class="contacts__items">
-                  <a href="" target="_blank" class="link"
+                  <a href="mailto:erika.milewska@gmail.com" target="_blank" class="link"
                     ><div class="contact__item">
                       <div class="contact__icon contact__icon_mail"></div>
                       <div class="contact__info">
@@ -361,7 +354,7 @@
                       </div>
                     </div></a
                   >
-                  <a href="" target="_blank" class="link"
+                  <a href="https://github.com/rika-milew" target="_blank" class="link"
                     ><div class="contact__item">
                       <div class="contact__icon contact__icon_github"></div>
                       <div class="contact__info">
@@ -370,7 +363,7 @@
                       </div>
                     </div></a
                   >
-                  <a href="" target="_blank" class="link"
+                  <a href="https://github.com/rika-milew" target="_blank" class="link"
                     ><div class="contact__item">
                       <div class="contact__icon contact__icon_linkedin"></div>
                       <div class="contact__info">
@@ -379,7 +372,7 @@
                       </div>
                     </div></a
                   >
-                  <a href="" target="_blank" class="link"
+                  <a href="https://t.me/rika_mee" target="_blank" class="link"
                     ><div class="contact__item">
                       <div class="contact__icon contact__icon_telegram"></div>
                       <div class="contact__info">
@@ -391,25 +384,33 @@
                 </div>
               </div>
 
-              <form class="contact-form">
+              <form id="contact-form" class="contact-form">
                 <div class="form__item">
                   <label for="name">Name</label>
-                  <input id="name" type="text" placeholder="Your name" required />
+                  <input id="name" type="text" name="name" placeholder="Your name" required />
                 </div>
 
                 <div class="form__item">
                   <label for="email">Email</label>
-                  <input id="email" type="email" placeholder="Email" required />
+                  <input id="email" type="email" name="email" placeholder="Email" required />
                 </div>
 
                 <div class="form__item">
                   <label for="message">Message</label>
-                  <textarea id="message" rows="5" placeholder="Message..." required></textarea>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    placeholder="Message..."
+                    required
+                    class="message-textarea"
+                  ></textarea>
                 </div>
 
                 <button type="submit" class="button color-button">
                   <span class="button-icon"></span>Send message
                 </button>
+                <p id="form-status"></p>
               </form>
             </div>
           </div>
@@ -419,13 +420,29 @@
         <div class="container">
           <p>© 2026 Erika Milevskaya. All rights reserved.</p>
           <div class="icons">
-            <div class="footer-icon github-icon"></div>
-            <div class="footer-icon linkedin-icon"></div>
-            <div class="footer-icon telegram-icon"></div>
+            <a href="https://github.com/rika-milew" target="_blank"
+              ><div class="footer-icon github-icon"></div
+            ></a>
+            <a href="https://github.com/rika-milew" target="_blank"
+              ><div class="footer-icon linkedin-icon"></div
+            ></a>
+            <a href="https://t.me/rika_mee" target="_blank"
+              ><div class="footer-icon telegram-icon"></div
+            ></a>
           </div>
         </div>
       </footer>
+      <div class="modal" id="modal">
+        <div id="close-icon" class="modal__content">
+          <span class="close-icon"></span>
+          <img src="" alt="" class="modal-icon" />
+          <p id="modal-heading"></p>
+          <p id="modal-text"></p>
+          <button id="modal-close" class="button color-button">Close</button>
+        </div>
+      </div>
     </div>
-    <script src="scripts/script.js"></script>
+
+    <script type="module" src="scripts/script.js"></script>
   </body>
 </html>
