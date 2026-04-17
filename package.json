@@ -12,7 +12,8 @@
     "format:check": "prettier --check .",
     "lint": "eslint",
     "lint:fix": "eslint . --fix",
-    "prepare": "husky"
+    "prepare": "husky",
+    "deploy": "npm run build && vercel --prod --yes"
   },
   "lint-staged": {
     "*.{js,mjs}": [

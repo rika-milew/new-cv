@@ -92,12 +92,20 @@ for (let i = 0; i < STAR_COUNT; i++) {
 
 // modal
 
+import checkIcon from '../assets/icons/check-icon.svg';
+import crossIcon from '../assets/icons/cross-icon.svg';
+
 const modal = document.getElementById('modal');
 const modalHeading = document.getElementById('modal-heading');
 const modalText = document.getElementById('modal-text');
 const modalImg = document.querySelector('.modal__content img');
 const closeButton = document.getElementById('modal-close');
 const closeIcon = document.getElementById('close-icon');
+
+const icons = {
+  success: checkIcon,
+  error: crossIcon,
+};
 
 function showModal({ type, title, message }) {
   modal.classList.add('show');
@@ -107,14 +115,7 @@ function showModal({ type, title, message }) {
   modalText.textContent = message;
 
   modalImg.alt = type === 'success' ? 'Success' : 'Error';
-
-  if (type === 'success') {
-    modalImg.src = '/assets/icons/check-icon.svg';
-  }
-
-  if (type === 'error') {
-    modalImg.src = '/assets/icons/cross-icon.svg';
-  }
+  modalImg.src = icons[type];
 }
 
 function hideModal() {
