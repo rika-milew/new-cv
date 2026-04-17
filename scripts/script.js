@@ -1,5 +1,4 @@
 // burger menu
-
 const burger = document.querySelector('.header__burger');
 const menu = document.querySelector('.header__menu');
 const links = document.querySelectorAll('.header__link');
