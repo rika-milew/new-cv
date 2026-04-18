@@ -70,10 +70,10 @@ for (let i = 0; i < STAR_COUNT; i++) {
   const star = document.createElement('div');
   star.classList.add('star');
 
-  const left = Math.random() * 100;
-  const top = Math.random() * 100;
-
   const size = Math.random() * 3 + 1;
+
+  const left = Math.random() * (100 - size);
+  const top = Math.random() * (100 - size);
 
   const duration = (Math.random() * 4 + 2).toFixed(1);
 
@@ -157,7 +157,7 @@ form.addEventListener('submit', function (e) {
       showModal({
         type: 'error',
         title: 'Something went wrong',
-        message: 'Please try again later ✖',
+        message: 'Please try again later',
       });
       console.error('Error:', error);
     });
