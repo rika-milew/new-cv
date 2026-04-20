@@ -29,6 +29,10 @@
   padding-left: 4rem;
 }
 
+.education-block:last-child {
+  margin-bottom: 0;
+}
+
 .education__icon {
   position: absolute;
   top: 0.5rem;
