@@ -1,13 +1,15 @@
 .header {
+  position: relative;
+  z-index: 100;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   border-bottom: 1px solid hsl(var(--border) / 0.5);
+  background-color: hsl(var(--background));
 }
 
 .header.active {
   position: relative;
   z-index: 100;
-  background-color: hsl(var(--background));
 }
 
 .header .container {
