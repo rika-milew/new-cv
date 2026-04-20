@@ -38,23 +38,23 @@
 }
 
 .contact__icon_mail {
-  -webkit-mask-image: url(../assets/icons/mail.svg);
-  mask-image: url(../assets/icons/mail.svg);
+  -webkit-mask-image: url(../../../assets/icons/mail.svg);
+  mask-image: url(../../../assets/icons/mail.svg);
 }
 
 .contact__icon_github {
-  -webkit-mask-image: url(../assets/icons/github.svg);
-  mask-image: url(../assets/icons/github.svg);
+  -webkit-mask-image: url(../../../assets/icons/github.svg);
+  mask-image: url(../../../assets/icons/github.svg);
 }
 
 .contact__icon_linkedin {
-  -webkit-mask-image: url(../assets/icons/linkedin.svg);
-  mask-image: url(../assets/icons/linkedin.svg);
+  -webkit-mask-image: url(../../../assets/icons/linkedin.svg);
+  mask-image: url(../../../assets/icons/linkedin.svg);
 }
 
 .contact__icon_telegram {
-  -webkit-mask-image: url(../assets/icons/telegram.svg);
-  mask-image: url(../assets/icons/telegram.svg);
+  -webkit-mask-image: url(../../../assets/icons/telegram.svg);
+  mask-image: url(../../../assets/icons/telegram.svg);
 }
 
 .link {
@@ -95,8 +95,8 @@
   mask-size: contain;
   background-size: cover;
   transition: all var(--transition-duration) var(--transition-timing-function);
-  -webkit-mask-image: url(../assets/icons/telegram.svg);
-  mask-image: url(../assets/icons/telegram.svg);
+  -webkit-mask-image: url(../../../assets/icons/telegram.svg);
+  mask-image: url(../../../assets/icons/telegram.svg);
 }
 
 @media (hover: hover) and (pointer: fine) {

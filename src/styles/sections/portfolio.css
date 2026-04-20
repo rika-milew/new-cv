@@ -125,13 +125,13 @@
 }
 
 .portfolio__icon.github {
-  -webkit-mask-image: url(../assets/icons/github.svg);
-  mask-image: url(../assets/icons/github.svg);
+  -webkit-mask-image: url(../../../assets/icons/github.svg);
+  mask-image: url(../../../assets/icons/github.svg);
 }
 
 .portfolio__icon.link {
-  -webkit-mask-image: url(../assets/icons/link.svg);
-  mask-image: url(../assets/icons/link.svg);
+  -webkit-mask-image: url(../../../assets/icons/link.svg);
+  mask-image: url(../../../assets/icons/link.svg);
 }
 
 @media (hover: hover) and (pointer: fine) {

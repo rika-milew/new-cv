@@ -1,5 +1,5 @@
 import emailjs from '@emailjs/browser';
-import { showModal } from '../modal.js';
+import { showModal } from './modal.js';
 
 export function initForm() {
   const form = document.getElementById('contact-form');
