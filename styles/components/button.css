@@ -1,0 +1,49 @@
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  height: 2.5rem;
+  padding: 0.5rem 1.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: calc(var(--radius) - 0.125rem);
+  white-space: nowrap;
+  transition: all var(--transition-duration) var(--transition-timing-function);
+  cursor: pointer;
+}
+
+.color-button {
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .color-button:hover {
+    background-color: hsl(var(--primary) / 0.8);
+  }
+
+  .transparent-button:hover {
+    color: hsl(var(--accent-foreground));
+    background-color: hsl(var(--primary) / 0.1);
+  }
+}
+
+.color-button:active {
+  background-color: hsl(var(--primary) / 0.8);
+}
+
+.transparent-button:active {
+  color: hsl(var(--accent-foreground));
+  background-color: hsl(var(--primary) / 0.1);
+}
+
+.transparent-button {
+  background-color: hsl(var(--background));
+  color: hsl(var(--primary));
+  border: 1px solid hsl(var(--primary) / 0.5);
+}

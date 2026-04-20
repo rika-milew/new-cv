@@ -1,0 +1,105 @@
+.section {
+  opacity: 0;
+  transform: translateY(3rem);
+  transition: all 0.6s ease;
+}
+
+.section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#starfield {
+  position: fixed;
+  inset: 3.25rem 0 0 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.star {
+  position: absolute;
+  border-radius: 50%;
+  background: hsl(var(--card-foreground));
+  animation: twinkle var(--duration) ease-in-out infinite;
+  animation-delay: var(--delay);
+}
+
+.moon {
+  position: absolute;
+  top: 5rem;
+  right: 2.5rem;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  background: linear-gradient(to bottom right, hsla(45, 80%, 90%, 0.2), hsla(45, 80%, 90%, 0.05));
+  animation: moon-glow 4s ease-in-out infinite;
+  z-index: 5;
+}
+
+@media (min-width: 768px) {
+  .moon {
+    top: 5rem;
+    right: 7.5rem;
+    width: 12rem;
+    height: 12rem;
+  }
+}
+
+.planet-container {
+  position: absolute;
+  top: 33%;
+  left: 25%;
+  z-index: 1;
+  display: none;
+}
+
+.planet {
+  display: none;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: linear-gradient(to right, hsl(263, 90%, 68%), hsl(239, 90%, 70%));
+  opacity: 0.6;
+  animation: orbit 20s linear infinite;
+}
+
+@media (min-width: 768px) {
+  .planet-container {
+    display: block;
+  }
+
+  .planet {
+    display: block;
+  }
+}
+
+.gradient-title {
+  background: linear-gradient(
+    270deg,
+    hsl(271, 91%, 65%),
+    hsl(270, 95%, 75%),
+    hsl(239, 84%, 67%),
+    hsl(271, 91%, 65%)
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  will-change: background-position;
+}
+
+@supports (-webkit-touch-callout: none) {
+  .gradient-title {
+    animation: none;
+    background-size: 100% 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gradient-title {
+    animation: none;
+    background-size: 100% 100%;
+  }
+}

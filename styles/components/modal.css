@@ -1,0 +1,87 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: hsl(0 0% 0% / 0.6);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 999;
+}
+
+body.lock {
+  overflow: hidden;
+}
+
+.modal.show {
+  display: flex;
+  opacity: 1;
+  pointer-events: all;
+  padding: 1rem;
+}
+
+.modal__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 24rem;
+  background: hsl(var(--card) / 0.95);
+  backdrop-filter: blur(12px);
+  background-color: hsl(var(--card) / 0.95);
+  border: 1px solid hsl(var(--primary) / 0.3);
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+.close-icon {
+  position: absolute;
+  display: block;
+  top: 1rem;
+  right: 1rem;
+  width: 1rem;
+  height: 1rem;
+
+  -webkit-mask-image: url(../assets/icons/cross.svg);
+  mask-image: url(../assets/icons/cross.svg);
+  background-color: hsl(var(--muted-foreground));
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+
+  transition: background-color var(--transition-duration) var(--transition-timing-function);
+  cursor: pointer;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .close-icon:hover {
+    background-color: hsl(var(--foreground));
+  }
+}
+
+.close-icon:active {
+  background-color: hsl(var(--foreground));
+}
+
+#modal-heading {
+  letter-spacing: -0.025em;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  text-align: center;
+  font-weight: 600;
+  font-family: 'Space Grotesk', sans-serif;
+  color: hsl(var(--primary));
+}
+
+#modal-text {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  text-align: center;
+  color: hsl(var(--muted-foreground));
+}

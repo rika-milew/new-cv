@@ -1,5 +1,5 @@
-import checkIcon from '../../assets/icons/check-icon.svg';
-import crossIcon from '../../assets/icons/cross-icon.svg';
+import checkIcon from '../../../assets/icons/check-icon.svg';
+import crossIcon from '../../../assets/icons/cross-icon.svg';
 
 const icons = {
   success: checkIcon,

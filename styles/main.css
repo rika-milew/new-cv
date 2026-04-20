@@ -1,0 +1,20 @@
+@import './global.css';
+
+@import './base/reset.css';
+@import './base//variables.css';
+
+@import './components/header.css';
+@import './components/footer.css';
+@import './components/button.css';
+@import './components/form.css';
+@import './components/modal.css';
+
+@import './sections/hero.css';
+@import './sections/about.css';
+@import './sections/skills.css';
+@import './sections/portfolio.css';
+@import './sections/education.css';
+@import './sections/contacts.css';
+
+@import './effects/effects.css';
+@import './effects/animations.css';

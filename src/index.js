@@ -1,8 +1,8 @@
-import { initMenu } from './features/menu.js';
-import { initObserver } from './features/observer.js';
-import { initStars } from './features/stars/stars.js';
-import { initModal } from './features/modal.js';
-import { initForm } from './features/form.js';
+import { initMenu } from './scripts/features/menu.js';
+import { initObserver } from './scripts/features/observer.js';
+import { initStars } from './scripts/features/stars/stars.js';
+import { initModal } from './scripts/features/modal.js';
+import { initForm } from './scripts/features/form.js';
 
 initMenu();
 initObserver();

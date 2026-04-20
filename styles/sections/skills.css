@@ -1,0 +1,74 @@
+#skills .container {
+  max-width: 64rem;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.cards-container > * {
+  min-width: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .cards-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
+.card {
+  padding: 1.5rem;
+  border: 1px solid hsl(var(--border) / 0.5);
+  border-radius: 0.75rem;
+  background-color: hsl(var(--card) / 0.5);
+  color: hsl(var(--card-foreground));
+  transition: border var(--transition-duration) var(--transition-timing-function);
+  cursor: default;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    border-color: hsl(var(--primary) / 0.4);
+  }
+}
+
+.card:active {
+  border-color: hsl(var(--primary) / 0.4);
+}
+
+.badges-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.badge {
+  padding: 0.125rem 0.625rem;
+  font-weight: 600;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  border: 1px solid hsl(var(--border) / 0.5);
+  border-radius: 9999px;
+  background-color: hsl(var(--muted) / 0.5);
+  color: hsl(var(--foreground));
+  transition: all var(--transition-duration) var(--transition-timing-function);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .skill-badge:hover {
+    border-color: hsl(var(--primary) / 0.4);
+    box-shadow: 0 0 20px hsl(var(--shadow) / 0.3);
+    background-color: hsl(var(--primary) / 0.2);
+  }
+}
+
+.skill-badge:active {
+  border-color: hsl(var(--primary) / 0.4);
+  box-shadow: 0 0 20px hsl(var(--shadow) / 0.3);
+  background-color: hsl(var(--primary) / 0.2);
+}

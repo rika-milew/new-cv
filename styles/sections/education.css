@@ -1,0 +1,68 @@
+#education .container {
+  max-width: 48rem;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.education-container {
+  position: relative;
+}
+
+.decoration {
+  position: absolute;
+  top: 0;
+  left: 1.5rem;
+  bottom: 0;
+  width: 0.065rem;
+  border-color: hsl(var(--border));
+  background: linear-gradient(
+    to bottom,
+    hsl(263 90% 68% / 0.6),
+    hsl(270 80% 75% / 0.4),
+    transparent
+  );
+}
+
+.education-block {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-left: 4rem;
+}
+
+.education__icon {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border: 2px solid hsl(var(--primary) / 0.6);
+  border-radius: 9999px;
+  background-color: hsl(var(--card));
+}
+
+.education__year {
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  letter-spacing: 0.025em;
+  color: hsl(var(--accent));
+}
+
+.education__establishment {
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 600;
+  font-family: 'Space Grotesk', sans-serif;
+  color: hsl(var(--foreground));
+}
+
+.education__description {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: hsl(var(--muted-foreground));
+}

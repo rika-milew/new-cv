@@ -1,0 +1,76 @@
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes moon-glow {
+  0%,
+  100% {
+    box-shadow:
+      0 0 60px 20px hsla(45, 80%, 70%, 0.15),
+      0 0 120px 60px hsla(263, 84%, 65%, 0.1);
+  }
+  50% {
+    box-shadow:
+      0 0 80px 30px hsla(45, 80%, 70%, 0.25),
+      0 0 160px 80px hsla(263, 84%, 65%, 0.15);
+  }
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg) translateX(7.5rem) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(7.5rem) rotate(-360deg);
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-1.25rem);
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  to {
+    box-shadow: 0 0 20px hsla(263, 84%, 65%, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 40px hsla(263, 84%, 65%, 0.6);
+  }
+}

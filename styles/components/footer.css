@@ -1,0 +1,77 @@
+.footer {
+  border-top: 1px solid hsl(var(--border) / 0.3);
+}
+
+.footer .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .footer .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 56rem;
+  }
+}
+
+.footer p {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: hsl(var(--muted-foreground));
+}
+
+.footer .icons {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.footer-icon {
+  width: 1.125rem;
+  height: 1.125rem;
+
+  background-color: hsl(var(--muted-foreground));
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  background-size: cover;
+  transition: background-color var(--transition-duration) var(--transition-timing-function);
+  cursor: pointer;
+}
+
+.github-icon {
+  -webkit-mask-image: url(../assets/icons/github.svg);
+  mask-image: url(../assets/icons/github.svg);
+}
+
+.telegram-icon {
+  -webkit-mask-image: url(../assets/icons/telegram.svg);
+  mask-image: url(../assets/icons/telegram.svg);
+}
+
+.linkedin-icon {
+  -webkit-mask-image: url(../assets/icons/linkedin.svg);
+  mask-image: url(../assets/icons/linkedin.svg);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .footer-icon:hover {
+    background-color: hsl(var(--primary));
+  }
+}
+
+.footer-icon:active {
+  background-color: hsl(var(--primary));
+}
