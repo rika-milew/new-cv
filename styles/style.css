@@ -3,30 +3,14 @@
   --foreground: 0 0% 98%;
   --card: 263 50% 14%;
   --card-foreground: 0 0% 98%;
-  --popover: 263 50% 14%;
-  --popover-foreground: 0 0% 98%;
   --primary: 263 90% 68%;
   --primary-foreground: 0 0% 100%;
-  --secondary: 239 90% 70%;
-  --secondary-foreground: 0 0% 100%;
   --muted: 263 35% 20%;
   --muted-foreground: 263 15% 72%;
   --accent: 270 80% 75%;
   --accent-foreground: 0 0% 100%;
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 210 40% 98%;
   --border: 263 35% 24%;
-  --ring: 263 90% 68%;
   --radius: 0.75rem;
-  --sidebar-background: 263 55% 10%;
-  --sidebar-foreground: 0 0% 98%;
-  --sidebar-primary: 263 90% 68%;
-  --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 263 35% 20%;
-  --sidebar-accent-foreground: 0 0% 98%;
-  --sidebar-border: 263 35% 24%;
-  --sidebar-ring: 263 90% 68%;
-
   --transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   --transition-duration: 0.3s;
 }
@@ -50,8 +34,8 @@ body {
 
 #root {
   width: 100%;
-  background: hsl(var(--background));
   font-family: 'Inter', sans-serif;
+  background: hsl(var(--background));
 }
 
 #hero {
@@ -60,6 +44,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  min-height: 100dvh;
   text-align: center;
 }
 
@@ -76,10 +61,8 @@ h2 {
   font-weight: 700;
   font-size: 1.875rem;
   line-height: 2.25rem;
-
   text-align: center;
   font-family: 'Space Grotesk', sans-serif;
-
   background: linear-gradient(270deg, #a855f7, #c084fc, #6366f1, #a855f7);
   -webkit-background-clip: text;
   background-clip: text;
@@ -139,7 +122,6 @@ h2 {
   right: 2.5rem;
   width: 8rem;
   height: 8rem;
-
   border-radius: 50%;
   background: linear-gradient(to bottom right, hsla(45, 80%, 90%, 0.2), hsla(45, 80%, 90%, 0.05));
   animation: moon-glow 4s ease-in-out infinite;
@@ -170,11 +152,11 @@ h2 {
 }
 
 .planet-container {
-  display: none;
   position: absolute;
   top: 33%;
   left: 25%;
   z-index: 1;
+  display: none;
 }
 
 .planet {
@@ -286,10 +268,8 @@ body.lock {
   display: block;
   width: 100%;
   padding: 20px 0;
-
   text-align: center;
   opacity: 0;
-
   transition:
     right 0.5s cubic-bezier(0.4, 0, 0.2, 1),
     opacity 0.5s ease;
@@ -297,21 +277,21 @@ body.lock {
 
 .header__menu.active {
   display: block;
-  opacity: 1;
+  z-index: 100;
   background-color: transparent;
+  opacity: 1;
   transition:
     right 0.5s cubic-bezier(0.4, 0, 0.2, 1),
     opacity 0.5s ease;
-  z-index: 100;
 }
 
 .header__list {
   display: flex;
-  width: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 0;
+  width: 100%;
 }
 
 .header__list li {
@@ -323,7 +303,6 @@ body.lock {
   width: 100%;
   padding: 0.75rem 0;
   font-weight: 600;
-
   font-family: 'Inter', sans-serif;
   color: hsl(var(--muted-foreground));
   text-decoration: none;
@@ -394,6 +373,7 @@ body.lock {
 
 #hero {
   position: relative;
+  min-height: calc(100vh - 52px);
   min-height: calc(100dvh - 52px);
   margin: 0 auto;
   padding-top: 4rem;
@@ -472,7 +452,6 @@ h1 {
   margin-bottom: 0.5rem;
   font-size: 1.25rem;
   line-height: 1.75rem;
-
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 400;
   color: hsl(var(--muted-foreground));
@@ -597,9 +576,9 @@ h1 {
 .about__photo {
   flex-shrink: 0;
   overflow: hidden;
-  margin: 0 auto;
   width: 10rem;
   aspect-ratio: 1 / 1;
+  margin: 0 auto;
   border-radius: 50%;
   border: 2px solid hsl(var(--primary) / 0.3);
   animation: glow-pulse 3s ease-in-out infinite;
@@ -716,7 +695,6 @@ h1 {
 
 h3 {
   margin-bottom: 1rem;
-
   font-size: 1.125rem;
   line-height: 1.75rem;
   font-family: 'Space Grotesk', sans-serif;
@@ -745,16 +723,16 @@ h3 {
 
 @media (hover: hover) and (pointer: fine) {
   .skill-badge:hover {
-    background-color: hsl(var(--primary) / 0.2);
     border-color: hsl(var(--primary) / 0.4);
     box-shadow: 0 0 20px hsl(263 84% 65% / 0.3);
+    background-color: hsl(var(--primary) / 0.2);
   }
 }
 
 .skill-badge:active {
-  background-color: hsl(var(--primary) / 0.2);
   border-color: hsl(var(--primary) / 0.4);
   box-shadow: 0 0 20px hsl(263 84% 65% / 0.3);
+  background-color: hsl(var(--primary) / 0.2);
 }
 
 /* portfolio  */
@@ -774,8 +752,8 @@ h3 {
 
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
-    box-shadow: 0 0 30px hsl(263 84% 65% / 0.15);
     border-color: hsl(var(--primary) / 0.4);
+    box-shadow: 0 0 30px hsl(263 84% 65% / 0.15);
   }
 
   .portfolio-card:hover h3 {
@@ -784,8 +762,8 @@ h3 {
 }
 
 .card:active {
-  box-shadow: 0 0 30px hsl(263 84% 65% / 0.15);
   border-color: hsl(var(--primary) / 0.4);
+  box-shadow: 0 0 30px hsl(263 84% 65% / 0.15);
 }
 
 .portfolio-card:active h3 {
@@ -1006,16 +984,13 @@ h3 {
 .contact__icon {
   width: 1.25rem;
   height: 1.25rem;
-
   background-color: hsl(var(--primary));
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: center;
   -webkit-mask-size: contain;
-
   mask-repeat: no-repeat;
   mask-position: center;
   mask-size: contain;
-
   background-size: cover;
   transition: background-color var(--transition-duration) var(--transition-timing-function);
 }
@@ -1056,8 +1031,8 @@ h3 {
   justify-content: flex-start;
   align-items: center;
   gap: 0.75rem;
-  text-align: left;
   padding: 0.75rem;
+  text-align: left;
   border: 1px solid hsl(var(--border) / 0.5);
   border-radius: var(--radius);
   background-color: hsl(var(--card) / 0.3);
@@ -1105,9 +1080,7 @@ h3 {
 .form__item input:focus,
 .form__item textarea:focus {
   outline: none;
-
   border-color: hsl(var(--primary) / 0.6);
-
   box-shadow:
     0 0 0 2px hsl(var(--background)),
     0 0 0 4px hsl(var(--primary));
@@ -1139,13 +1112,13 @@ textarea:-webkit-autofill {
 }
 
 .message-textarea::-webkit-scrollbar-track {
-  background: hsl(var(--primary) / 0.3);
   border-radius: 4px;
+  background: hsl(var(--primary) / 0.3);
 }
 
 .message-textarea::-webkit-scrollbar-thumb {
-  background: hsl(var(--primary) / 0.5);
   border-radius: 4px;
+  background: hsl(var(--primary) / 0.5);
   transition: all 0.2s;
 }
 
@@ -1153,7 +1126,6 @@ textarea:-webkit-autofill {
   background: hsl(var(--primary) / 0.8);
 }
 
-/* Firefox */
 .message-textarea {
   scrollbar-width: thin;
   scrollbar-color: hsl(var(--primary) / 0.5) hsl(var(--muted) / 0.3);
@@ -1163,15 +1135,14 @@ textarea:-webkit-autofill {
   flex-shrink: 0;
   width: 1rem;
   height: 1rem;
+
   background-color: hsl(var(--foreground));
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: center;
   -webkit-mask-size: contain;
-
   mask-repeat: no-repeat;
   mask-position: center;
   mask-size: contain;
-
   background-size: cover;
   transition: all var(--transition-duration) var(--transition-timing-function);
   -webkit-mask-image: url(../assets/icons/telegram.svg);
@@ -1180,9 +1151,8 @@ textarea:-webkit-autofill {
 
 @media (hover: hover) and (pointer: fine) {
   .contact__item:hover {
-    background-color: hsl(var(--primary) / 0.05);
-
     border-color: hsl(var(--primary) / 0.4);
+    background-color: hsl(var(--primary) / 0.05);
   }
 
   .contact__item:hover .contact__icon {
@@ -1202,10 +1172,9 @@ textarea:-webkit-autofill {
 }
 
 .contact__link {
-  color: hsl(var(--foreground));
-
   font-size: 0.875rem;
   line-height: 1.25rem;
+  color: hsl(var(--foreground));
 }
 
 /* footer  */
@@ -1255,11 +1224,9 @@ textarea:-webkit-autofill {
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: center;
   -webkit-mask-size: contain;
-
   mask-repeat: no-repeat;
   mask-position: center;
   mask-size: contain;
-
   background-size: cover;
   transition: background-color var(--transition-duration) var(--transition-timing-function);
   cursor: pointer;
@@ -1338,13 +1305,13 @@ body.lock {
   right: 1rem;
   width: 1rem;
   height: 1rem;
+
   -webkit-mask-image: url(../assets/icons/cross.svg);
   mask-image: url(../assets/icons/cross.svg);
   background-color: hsl(var(--muted-foreground));
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: center;
   -webkit-mask-size: contain;
-
   mask-repeat: no-repeat;
   mask-position: center;
   mask-size: contain;
