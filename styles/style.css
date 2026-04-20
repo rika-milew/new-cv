@@ -81,7 +81,7 @@ h2 {
 
 .section {
   opacity: 0;
-  transform: translateY(50px);
+  transform: translateY(3rem);
   transition: all 0.6s ease;
 }
 
@@ -92,7 +92,7 @@ h2 {
 
 #starfield {
   position: fixed;
-  inset: 52px 0 0 0;
+  inset: 3.25rem 0 0 0;
   pointer-events: none;
   z-index: 0;
   overflow: hidden;
@@ -130,10 +130,10 @@ h2 {
 
 @media (min-width: 768px) {
   .moon {
-    top: 80px;
-    right: 120px;
-    width: 192px;
-    height: 192px;
+    top: 5rem;
+    right: 7.5rem;
+    width: 12rem;
+    height: 12rem;
   }
 }
 
