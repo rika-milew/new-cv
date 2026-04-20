@@ -9,6 +9,7 @@
   --muted-foreground: 263 15% 72%;
   --accent: 270 80% 75%;
   --accent-foreground: 0 0% 100%;
+  --shadow: 263 84% 65%;
   --border: 263 35% 24%;
   --radius: 0.75rem;
   --transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -63,7 +64,13 @@ h2 {
   line-height: 2.25rem;
   text-align: center;
   font-family: 'Space Grotesk', sans-serif;
-  background: linear-gradient(270deg, #a855f7, #c084fc, #6366f1, #a855f7);
+  background: linear-gradient(
+    270deg,
+    hsl(271, 91%, 65%),
+    hsl(270, 95%, 75%),
+    hsl(239, 84%, 67%),
+    hsl(271, 91%, 65%)
+  );
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -101,7 +108,7 @@ h2 {
 .star {
   position: absolute;
   border-radius: 50%;
-  background: hsl(0, 0%, 98%);
+  background: hsl(var(--card-foreground));
   animation: twinkle var(--duration) ease-in-out infinite;
   animation-delay: var(--delay);
 }
@@ -161,8 +168,8 @@ h2 {
 
 .planet {
   display: none;
-  width: 16px;
-  height: 16px;
+  width: 1rem;
+  height: 1rem;
   border-radius: 50%;
   background: linear-gradient(to right, hsl(263, 90%, 68%), hsl(239, 90%, 70%));
   opacity: 0.6;
@@ -181,10 +188,10 @@ h2 {
 
 @keyframes orbit {
   from {
-    transform: rotate(0deg) translateX(120px) rotate(0deg);
+    transform: rotate(0deg) translateX(7.5rem) rotate(0deg);
   }
   to {
-    transform: rotate(360deg) translateX(120px) rotate(-360deg);
+    transform: rotate(360deg) translateX(7.5rem) rotate(-360deg);
   }
 }
 
@@ -214,8 +221,8 @@ h2 {
   position: relative;
   z-index: 3;
   display: block;
-  width: 26px;
-  height: 16px;
+  width: 1.625rem;
+  height: 1rem;
   cursor: pointer;
 }
 
@@ -225,27 +232,27 @@ h2 {
   position: absolute;
   left: 0;
   width: 100%;
-  height: 2px;
+  height: 0.125rem;
   background-color: hsl(var(--muted-foreground));
   transition: all 0.3s ease;
 }
 
 .header__burger span {
   position: absolute;
-  top: 7px;
+  top: 0.5rem;
   left: 0;
   width: 100%;
-  height: 2px;
+  height: 0.125rem;
   background-color: hsl(var(--muted-foreground));
 }
 
 .header__burger.active:before {
-  top: 7px;
+  top: 0.5rem;
   transform: rotate(45deg);
 }
 
 .header__burger.active:after {
-  bottom: 7px;
+  bottom: 0.5rem;
   transform: rotate(-45deg);
 }
 
@@ -269,11 +276,11 @@ body.lock {
 
 .header__menu {
   position: fixed;
-  top: 52px;
+  top: 3.25rem;
   left: 0;
   display: block;
   width: 100%;
-  padding: 20px 0;
+  padding: 1.25rem 0;
   text-align: center;
   opacity: 0;
   transition:
@@ -379,8 +386,8 @@ body.lock {
 
 #hero {
   position: relative;
-  min-height: calc(100vh - 52px);
-  min-height: calc(100dvh - 52px);
+  min-height: calc(100vh - 3.25rem);
+  min-height: calc(100dvh - 3.25rem);
   margin: 0 auto;
   padding-top: 4rem;
   padding-bottom: 4rem;
@@ -407,7 +414,13 @@ h1 {
 }
 
 .gradient-title {
-  background: linear-gradient(270deg, #a855f7, #c084fc, #6366f1, #a855f7);
+  background: linear-gradient(
+    270deg,
+    hsl(271, 91%, 65%),
+    hsl(270, 95%, 75%),
+    hsl(239, 84%, 67%),
+    hsl(271, 91%, 65%)
+  );
   background-size: 300% 300%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -493,7 +506,7 @@ h1 {
 @keyframes fade-in {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(1.25rem);
   }
   to {
     opacity: 1;
@@ -514,7 +527,7 @@ h1 {
   text-align: center;
   text-decoration: none;
   border: none;
-  border-radius: calc(var(--radius) - 2px);
+  border-radius: calc(var(--radius) - 0.125rem);
   white-space: nowrap;
   transition: all var(--transition-duration) var(--transition-timing-function);
   cursor: pointer;
@@ -577,7 +590,7 @@ h1 {
     transform: translateX(-50%) translateY(0);
   }
   50% {
-    transform: translateX(-50%) translateY(-20px);
+    transform: translateX(-50%) translateY(-1.25rem);
   }
 }
 
@@ -674,11 +687,11 @@ h1 {
 @keyframes glow-pulse {
   0%,
   to {
-    box-shadow: 0 0 20px #945bf14d;
+    box-shadow: 0 0 20px hsla(263, 84%, 65%, 0.3);
   }
 
   50% {
-    box-shadow: 0 0 40px #945bf199;
+    box-shadow: 0 0 40px hsla(263, 84%, 65%, 0.6);
   }
 }
 
@@ -758,14 +771,14 @@ h3 {
 @media (hover: hover) and (pointer: fine) {
   .skill-badge:hover {
     border-color: hsl(var(--primary) / 0.4);
-    box-shadow: 0 0 20px hsl(263 84% 65% / 0.3);
+    box-shadow: 0 0 20px hsl(var(--shadow) / 0.3);
     background-color: hsl(var(--primary) / 0.2);
   }
 }
 
 .skill-badge:active {
   border-color: hsl(var(--primary) / 0.4);
-  box-shadow: 0 0 20px hsl(263 84% 65% / 0.3);
+  box-shadow: 0 0 20px hsl(var(--shadow) / 0.3);
   background-color: hsl(var(--primary) / 0.2);
 }
 
@@ -787,7 +800,7 @@ h3 {
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
     border-color: hsl(var(--primary) / 0.4);
-    box-shadow: 0 0 30px hsl(263 84% 65% / 0.15);
+    box-shadow: 0 0 30px hsl(var(--shadow) / 0.15);
   }
 
   .portfolio-card:hover h3 {
@@ -797,7 +810,7 @@ h3 {
 
 .card:active {
   border-color: hsl(var(--primary) / 0.4);
-  box-shadow: 0 0 30px hsl(263 84% 65% / 0.15);
+  box-shadow: 0 0 30px hsl(var(--shadow) / 0.15);
 }
 
 .portfolio-card:active h3 {
@@ -840,7 +853,7 @@ h3 {
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 500;
-  border-radius: calc(var(--radius) - 2px);
+  border-radius: calc(var(--radius) - 0.125rem);
   color: hsl(var(--muted-foreground));
   background-color: transparent;
   white-space: nowrap;
@@ -934,7 +947,7 @@ h3 {
   top: 0;
   left: 1.5rem;
   bottom: 0;
-  width: 1px;
+  width: 0.065rem;
   border-color: hsl(var(--border));
   background: linear-gradient(
     to bottom,
@@ -1107,7 +1120,7 @@ h3 {
   color: hsl(var(--foreground));
   line-height: 1.5;
   border: 1px solid hsl(var(--border) / 0.5);
-  border-radius: calc(var(--radius) - 2px);
+  border-radius: calc(var(--radius) - 0.125rem);
   background-color: hsl(var(--card) / 0.5);
 }
 
@@ -1137,21 +1150,21 @@ textarea:-webkit-autofill {
 }
 
 .form__item textarea {
-  min-height: 80px;
+  min-height: 5rem;
   resize: none;
 }
 
 .message-textarea::-webkit-scrollbar {
-  width: 8px;
+  width: 0.5rem;
 }
 
 .message-textarea::-webkit-scrollbar-track {
-  border-radius: 4px;
+  border-radius: 0.25rem;
   background: hsl(var(--primary) / 0.3);
 }
 
 .message-textarea::-webkit-scrollbar-thumb {
-  border-radius: 4px;
+  border-radius: 0.25rem;
   background: hsl(var(--primary) / 0.5);
   transition: all 0.2s;
 }
@@ -1324,7 +1337,7 @@ body.lock {
   align-items: center;
   gap: 1rem;
   max-width: 24rem;
-  background: hsl(263 50% 14% / 0.95);
+  background: hsl(var(--card) / 0.95);
   backdrop-filter: blur(12px);
   background-color: hsl(var(--card) / 0.95);
   border: 1px solid hsl(var(--primary) / 0.3);
