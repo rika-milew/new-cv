@@ -45,8 +45,8 @@ body.lock {
   width: 1rem;
   height: 1rem;
 
-  -webkit-mask-image: url(../assets/icons/cross.svg);
-  mask-image: url(../assets/icons/cross.svg);
+  -webkit-mask-image: url(../../../assets/icons/cross.svg);
+  mask-image: url(../../../assets/icons/cross.svg);
   background-color: hsl(var(--muted-foreground));
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: center;
