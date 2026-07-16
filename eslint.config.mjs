@@ -186,7 +186,6 @@ export default defineConfig([
       'coverage/**',
       '*.config.mjs',
       '*.config.ts',
-      'src/types/database.types.ts',
     ],
   },
 ]);

@@ -35,7 +35,6 @@
     "url": "git+https://github.com/rika-milew/new-cv.git"
   },
   "author": "Erika Milevskaya",
-  "homepage": "https://github.com/rika-milew/new-cv#readme",
   "dependencies": {
     "classnames": "^2.5.1",
     "next": "^16.2.9",
