@@ -1,0 +1,32 @@
+'use client';
+
+import dynamic from 'next/dynamic';
+import type { ReactNode } from 'react';
+import classNames from 'classnames/bind';
+import Header from '@/components/header/header';
+import Moon from '@/components/animation/moon/moon';
+import Planet from '@/components/animation/planet/planet';
+import styles from './client-layout.module.css';
+
+const cx = classNames.bind(styles);
+
+const Starfield = dynamic(
+  () => import('@/components/animation/star-field/star-field'),
+  {
+    ssr: false,
+  },
+);
+
+export default function ClientLayout({ children }: { children: ReactNode }) {
+  return (
+    <>
+      <Header />
+      <div className={cx('decorations')}>
+        <Starfield />
+        <Moon />
+        <Planet />
+      </div>
+      <main>{children}</main>
+    </>
+  );
+}

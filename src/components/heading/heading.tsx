@@ -1,0 +1,25 @@
+import type { ReactNode } from 'react';
+import classNames from 'classnames/bind';
+import styles from './heading.module.css';
+
+const cx = classNames.bind(styles);
+
+type HeadingProps = {
+  as?: 'h1' | 'h2' | 'h3';
+  gradient?: boolean;
+  className?: string;
+  children: ReactNode;
+};
+
+export default function Heading({
+  as: Tag = 'h2',
+  gradient = false,
+  className,
+  children,
+}: HeadingProps) {
+  return (
+    <Tag className={cx('heading', Tag, { gradient }, className)}>
+      {children}
+    </Tag>
+  );
+}

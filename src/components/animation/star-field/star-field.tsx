@@ -2,7 +2,10 @@
 
 import { useState } from 'react';
 import { STARS } from '@/constants';
-import styles from './starfield.module.css';
+import classNames from 'classnames/bind';
+import styles from './star-field.module.css';
+
+const cx = classNames.bind(styles);
 
 type StarData = {
   id: number;
@@ -39,7 +42,7 @@ export default function Starfield() {
   const [stars] = useState<StarData[]>(generateStars);
 
   return (
-    <div className={styles.starfield}>
+    <div className={cx('starfiled')}>
       {stars.map((star) => {
         const starStyle: React.CSSProperties = {
           left: `${String(star.left)}%`,

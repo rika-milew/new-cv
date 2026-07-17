@@ -17,33 +17,35 @@
   cursor: pointer;
 }
 
-.color-button {
+.primary {
   background-color: hsl(var(--primary));
   color: hsl(var(--primary-foreground));
-}
 
-@media (hover: hover) and (pointer: fine) {
-  .color-button:hover {
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: hsl(var(--primary) / 0.8);
+    }
+  }
+
+  &:active {
     background-color: hsl(var(--primary) / 0.8);
   }
-
-  .transparent-button:hover {
-    color: hsl(var(--accent-foreground));
-    background-color: hsl(var(--primary) / 0.1);
-  }
 }
 
-.color-button:active {
-  background-color: hsl(var(--primary) / 0.8);
-}
-
-.transparent-button:active {
-  color: hsl(var(--accent-foreground));
-  background-color: hsl(var(--primary) / 0.1);
-}
-
-.transparent-button {
+.secondary {
   background-color: hsl(var(--background));
   color: hsl(var(--primary));
   border: 1px solid hsl(var(--primary) / 0.5);
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      color: hsl(var(--accent-foreground));
+      background-color: hsl(var(--primary) / 0.1);
+    }
+  }
+
+  &:active {
+    color: hsl(var(--accent-foreground));
+    background-color: hsl(var(--primary) / 0.1);
+  }
 }

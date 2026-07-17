@@ -1,18 +1,16 @@
-'use client';
-
-import dynamic from 'next/dynamic';
-import Hero from '@/components/hero/hero';
-
-const Starfield = dynamic(() => import('@/components/star-field/star-field'), {
-  ssr: false,
-});
+import Hero from '@/components/sections/hero/hero';
+import About from '@/components/sections/about/about';
+import Skills from '@/components/sections/skills/skills';
+import Portfolio from '@/components/sections/portfolio/portfolio';
 
 export default function Home() {
   return (
     <>
-      <Starfield />
       <main>
         <Hero />
+        <About />
+        <Skills />
+        <Portfolio />
         {/* <Hero />
       <About />
       <Skills />

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter, Space_Grotesk } from 'next/font/google';
 import type { ReactNode } from 'react';
-import Header from '@/components/header/header';
+import ClientLayout from './client-layout';
 import '@/styles/index.css';
 
 const inter = Inter({
@@ -28,8 +28,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <body>
-        <Header />
-        {children}
+        <div id="root">
+          <ClientLayout>{children}</ClientLayout>
+        </div>
       </body>
     </html>
   );

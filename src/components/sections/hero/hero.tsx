@@ -1,31 +1,32 @@
 import Link from 'next/link';
 import classNames from 'classnames/bind';
 import Image from 'next/image';
+import Button from '../../button/button';
+import Heading from '../../heading/heading';
 import styles from './hero.module.css';
 
 const cx = classNames.bind(styles);
 
 export default function Hero() {
   return (
-    <section id="hero" className={cx('section')}>
+    <section id="hero" className={`section} ${cx('section', 'hero')}`}>
       <div className={cx('container')}>
         <p className={cx('hero-text')}>Hello, I&apos;m</p>
-        <h1 className={cx('gradient-title')}>Erika Milevskaya</h1>
+        <Heading as="h1" gradient>
+          Erika Milevskaya
+        </Heading>
         <p className={cx('hero-heading')}>Frontend Developer</p>
         <p className={cx('hero-description')}>
           Building interfaces that inspire. React, TypeScript, and a touch of
           cosmic magic ✨
         </p>
         <div className={cx('buttons-container')}>
-          <Link href="/#about" className={cx('button', 'color-button')}>
+          <Button href="/#about" variant="primary">
             About Me
-          </Link>
-          <Link
-            href="/#contacts"
-            className={cx('button', 'transparent-button')}
-          >
+          </Button>
+          <Button href="/#contacts" variant="secondary">
             Contact Me
-          </Link>
+          </Button>
         </div>
       </div>
       <Link
@@ -33,7 +34,7 @@ export default function Hero() {
         className={cx('arrow-icon')}
         aria-label="Scroll to about"
       >
-        <Image src="/icons/arrow.svg" alt="" width={24} height={24} />
+        <Image src="/icons/arrow.svg" alt="" width={28} height={28} />
       </Link>
     </section>
   );

@@ -5,6 +5,7 @@
   padding-bottom: 0.75rem;
   border-bottom: 1px solid hsl(var(--border) / 0.5);
   background-color: hsl(var(--background));
+  z-index: 10;
 
   &.active {
     position: relative;
