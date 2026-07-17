@@ -10,17 +10,14 @@ body {
 
 body {
   min-height: 100%;
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  background: hsl(var(--background));
 }
 
 body.lock {
   overflow: hidden;
   padding-right: var(--scrollbar-width, 0px);
-}
-
-#root {
-  width: 100%;
-  font-family: 'Inter', sans-serif;
-  background: hsl(var(--background));
 }
 
 .container {

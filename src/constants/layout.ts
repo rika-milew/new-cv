@@ -11,3 +11,12 @@ export const NAV_ITEMS = [
   { href: '/#education', label: 'Education' },
   { href: '/#contacts', label: 'Contacts' },
 ] as const;
+
+export const STARS = {
+  COUNT: 80,
+  SIZE: 1,
+  SIZE_VARIATION: 3,
+  MAX_DURATION: 4,
+  MIN_DURATION: 2,
+  MAX_DELAY: 5,
+} as const;

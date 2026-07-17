@@ -5,11 +5,15 @@
   padding-bottom: 0.75rem;
   border-bottom: 1px solid hsl(var(--border) / 0.5);
   background-color: hsl(var(--background));
+
+  &.active {
+    position: relative;
+    z-index: 100;
+  }
 }
 
-.header.active {
-  position: relative;
-  z-index: 100;
+.logo {
+  text-decoration: none;
 }
 
 .container {
@@ -29,52 +33,57 @@
   z-index: 3;
   display: block;
   width: 1.625rem;
+  background: none;
+  border: none;
   height: 1rem;
   cursor: pointer;
-}
 
-.header-burger:before,
-.header-burger:after {
-  content: '';
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 0.125rem;
-  background-color: hsl(var(--muted-foreground));
-  transition: all 0.3s ease;
-}
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0.125rem;
+    background-color: hsl(var(--muted-foreground));
+    transition: all 0.3s ease;
+  }
 
-.header-burger:before {
-  top: 0;
-  z-index: 3;
-}
+  &::before {
+    top: 0;
+    z-index: 3;
+  }
 
-.header-burger:after {
-  bottom: 0;
+  &::after {
+    bottom: 0;
+  }
+
+  &.active {
+    &::before {
+      top: 50%;
+      transform: translateY(-50%) rotate(45deg);
+    }
+
+    &::after {
+      bottom: 50%;
+      transform: translateY(50%) rotate(-45deg);
+    }
+
+    .burger-line {
+      transform: translateY(-50%) scale(0);
+    }
+  }
 }
 
 .burger-line {
   position: absolute;
-  top: 0.438rem;
+  top: 50%;
   left: 0;
   width: 100%;
   height: 0.125rem;
   background-color: hsl(var(--muted-foreground));
-}
-
-.header-burger.active:before {
-  top: 0.438rem;
-  transform: rotate(45deg);
-}
-
-.header-burger.active:after {
-  bottom: 0.438rem;
-  transform: rotate(-45deg);
-}
-
-.header-burger.active .burger__line {
-  transform: scale(0);
-  transition: all 0.3s ease 0s;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease;
 }
 
 .header-menu {
@@ -89,16 +98,16 @@
   transition:
     right 0.5s cubic-bezier(0.4, 0, 0.2, 1),
     opacity 0.5s ease;
-}
 
-.header-menu.active {
-  display: block;
-  z-index: 100;
-  background: hsl(var(--background));
-  opacity: 1;
-  transition:
-    right 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 0.5s ease;
+  &.active {
+    display: block;
+    z-index: 100;
+    background: hsl(var(--background));
+    opacity: 1;
+    transition:
+      right 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 0.5s ease;
+  }
 }
 
 .header-list {

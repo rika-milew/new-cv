@@ -11,13 +11,18 @@
   padding-top: 4rem;
   padding-bottom: 4rem;
   text-align: center;
+  background-color: hsl(var(--background));
 }
 
-#hero .container {
+.container {
+  width: 100%;
   max-width: 52rem;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
-.hero__text {
+.hero-text {
   margin-bottom: 1rem;
   color: hsl(var(--accent));
   letter-spacing: 0.1em;
@@ -30,7 +35,7 @@
   will-change: transform, opacity;
 }
 
-.hero__description {
+.hero-description {
   max-width: 32rem;
   margin: 0 auto;
   margin-bottom: 2rem;
@@ -41,7 +46,7 @@
   will-change: transform, opacity;
 }
 
-.hero__heading {
+.hero-heading {
   margin-bottom: 0.5rem;
   font-size: 1.25rem;
   line-height: 1.75rem;
@@ -66,12 +71,12 @@
 }
 
 @media (min-width: 768px) {
-  .hero__text {
+  .hero-text {
     font-size: 1rem;
     line-height: 1.5rem;
   }
 
-  .hero__heading {
+  .hero-heading {
     font-size: 1.5rem;
     line-height: 2rem;
   }

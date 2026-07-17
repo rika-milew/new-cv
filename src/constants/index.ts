@@ -1,1 +1,1 @@
-export { BREAKPOINTS, NAV_ITEMS } from './layout';
+export { BREAKPOINTS, NAV_ITEMS, STARS } from './layout';
