@@ -3,7 +3,8 @@
 import dynamic from 'next/dynamic';
 import type { ReactNode } from 'react';
 import classNames from 'classnames/bind';
-import Header from '@/components/header/header';
+import Header from '@/components/layout/header/header';
+import Footer from '@/components/layout/footer/footer';
 import Moon from '@/components/animation/moon/moon';
 import Planet from '@/components/animation/planet/planet';
 import styles from './client-layout.module.css';
@@ -27,6 +28,7 @@ export default function ClientLayout({ children }: { children: ReactNode }) {
         <Planet />
       </div>
       <main>{children}</main>
+      <Footer />
     </>
   );
 }

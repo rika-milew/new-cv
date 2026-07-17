@@ -1,20 +1,28 @@
 .footer {
   border-top: 1px solid hsl(var(--border) / 0.3);
+
+  p {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: hsl(var(--muted-foreground));
+  }
 }
 
-.footer .container {
+.container {
   display: flex;
+  width: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  margin: 0 auto;
   padding-top: 2rem;
   padding-bottom: 2rem;
   text-align: center;
-}
+  padding-left: 1rem;
+  padding-right: 1rem;
 
-@media screen and (min-width: 768px) {
-  .footer .container {
+  @media screen and (min-width: 768px) {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -23,13 +31,7 @@
   }
 }
 
-.footer p {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  color: hsl(var(--muted-foreground));
-}
-
-.footer .icons {
+.icons {
   display: flex;
   flex-direction: row;
   gap: 1rem;
@@ -50,29 +52,14 @@
   transition: background-color var(--transition-duration)
     var(--transition-timing-function);
   cursor: pointer;
-}
 
-.github-icon {
-  -webkit-mask-image: url(../../../assets/icons/github.svg);
-  mask-image: url(../../../assets/icons/github.svg);
-}
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: hsl(var(--primary));
+    }
+  }
 
-.telegram-icon {
-  -webkit-mask-image: url(../../../assets/icons/telegram.svg);
-  mask-image: url(../../../assets/icons/telegram.svg);
-}
-
-.linkedin-icon {
-  -webkit-mask-image: url(../../../assets/icons/linkedin.svg);
-  mask-image: url(../../../assets/icons/linkedin.svg);
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .footer-icon:hover {
+  &:active {
     background-color: hsl(var(--primary));
   }
-}
-
-.footer-icon:active {
-  background-color: hsl(var(--primary));
 }
