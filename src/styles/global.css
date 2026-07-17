@@ -12,6 +12,11 @@ body {
   min-height: 100%;
 }
 
+body.lock {
+  overflow: hidden;
+  padding-right: var(--scrollbar-width, 0px);
+}
+
 #root {
   width: 100%;
   font-family: 'Inter', sans-serif;

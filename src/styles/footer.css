@@ -47,7 +47,8 @@
   mask-position: center;
   mask-size: contain;
   background-size: cover;
-  transition: background-color var(--transition-duration) var(--transition-timing-function);
+  transition: background-color var(--transition-duration)
+    var(--transition-timing-function);
   cursor: pointer;
 }
 
