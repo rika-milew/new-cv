@@ -3,6 +3,7 @@ import classNames from 'classnames/bind';
 import Image from 'next/image';
 import Button from '../../button/button';
 import Heading from '../../heading/heading';
+import Planet from '@/components/animation/planet/planet';
 import styles from './hero.module.css';
 
 const cx = classNames.bind(styles);
@@ -10,7 +11,8 @@ const cx = classNames.bind(styles);
 export default function Hero() {
   return (
     <section id="hero" className={`section} ${cx('section', 'hero')}`}>
-      <div className={cx('container')}>
+      <Planet />
+      <div className={cx('global-container', styles.container)}>
         <p className={cx('hero-text')}>Hello, I&apos;m</p>
         <Heading as="h1" gradient>
           Erika Milevskaya

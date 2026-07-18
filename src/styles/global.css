@@ -5,45 +5,47 @@ html {
 html,
 body {
   width: 100%;
-  -webkit-text-size-adjust: none;
   margin: 0;
+  text-size-adjust: none;
 }
 
 body {
   min-height: 100%;
+  font-family: Inter, sans-serif;
 }
 
 #root {
+  position: relative;
+
+  overflow: hidden;
   display: grid;
   grid-template-rows: 1fr auto;
-  position: relative;
+
   width: 100%;
   min-height: 100vh;
-  overflow: hidden;
-  font-family: 'Inter', sans-serif;
+
   background: hsl(var(--background));
 }
 
 body.lock {
   overflow: hidden;
-  padding-right: var(--scrollbar-width, 0px);
+  padding-right: var(--scrollbar-width, 0);
 }
 
-.container {
+.global-container {
   width: 100%;
-  max-width: 64rem;
   margin: 0 auto;
-  padding-left: 1rem;
   padding-right: 1rem;
+  padding-left: 1rem;
 }
 
 .section {
-  opacity: 0;
   transform: translateY(3rem);
+  opacity: 0;
   transition: all 0.6s ease;
 }
 
 .section.show {
-  opacity: 1;
   transform: translateY(0);
+  opacity: 1;
 }

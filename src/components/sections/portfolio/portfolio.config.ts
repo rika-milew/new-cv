@@ -1,4 +1,12 @@
-export const portfolioConfig = [
+type PortfolioItem = {
+  title: string;
+  description: string;
+  badges: string[];
+  github: string;
+  demo: string;
+};
+
+export const portfolioConfig: PortfolioItem[] = [
   {
     title: 'Tandem App',
     description:

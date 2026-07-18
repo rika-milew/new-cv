@@ -15,9 +15,9 @@ export default function Portfolio() {
     <section
       id="portfolio"
       ref={ref}
-      className={cx('section', styles.section, isRevealed && 'show')}
+      className={cx('section', styles.section, { show: isRevealed })}
     >
-      <div className={cx('container')}>
+      <div className={cx('global-container', 'container')}>
         <Heading as="h2" gradient>
           Portfolio
         </Heading>

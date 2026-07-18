@@ -17,9 +17,9 @@ export default function Skills() {
       ref={ref}
       className={cx('section', styles.section, isRevealed && 'show')}
     >
-      <div className={cx('container')}>
+      <div className={cx('global-container', styles.container)}>
         <Heading as="h2">Skills & Technologies</Heading>
-        <div className={cx('cards-container', styles.cardsContainer)}>
+        <div className={cx('cards-container')}>
           {skillsConfig.map((group) => (
             <div key={group.title} className={cx('card')}>
               <Heading as="h3">{group.title}</Heading>

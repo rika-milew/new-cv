@@ -57,7 +57,7 @@ export default function Header() {
 
   return (
     <header className={cx('header', { active: isMenuOpen })}>
-      <div className={cx('container')}>
+      <div className={cx('global-container', styles.container)}>
         <Link href="/" className={cx('logo')}>
           &lt;Dev /&gt;
         </Link>

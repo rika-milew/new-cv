@@ -1,0 +1,121 @@
+.container {
+  max-width: 48rem;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.timeline {
+  position: relative;
+}
+
+.decoration {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 1.5rem;
+
+  width: 0.065rem;
+  border-color: hsl(var(--border));
+
+  background: linear-gradient(
+    to bottom,
+    hsl(263deg 90% 68% / 60%),
+    hsl(270deg 80% 75% / 40%),
+    transparent
+  );
+}
+
+.item {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-left: 4rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.icon {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.75rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 1.75rem;
+  height: 1.75rem;
+  border: 2px solid hsl(var(--primary) / 60%);
+  border-radius: 9999px;
+
+  background-color: hsl(var(--card));
+}
+
+.year {
+  margin-bottom: 0.25rem;
+
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1rem;
+  color: hsl(var(--accent));
+  letter-spacing: 0.025em;
+}
+
+.establishment {
+  margin-bottom: 0.25rem;
+
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+  color: hsl(var(--foreground));
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+.description {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: hsl(var(--muted-foreground));
+}
+
+.card {
+  cursor: default;
+
+  padding: 1.5rem;
+  border: 1px solid hsl(var(--border) / 50%);
+  border-radius: 0.75rem;
+
+  color: hsl(var(--card-foreground));
+
+  background-color: hsl(var(--card) / 50%);
+
+  transition: border var(--transition-duration)
+    var(--transition-timing-function);
+
+  &:active {
+    border-color: hsl(var(--primary) / 40%);
+    box-shadow: 0 0 30px hsl(var(--shadow) / 15%);
+
+    & h3 {
+      color: hsl(var(--primary));
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      border-color: hsl(var(--primary) / 40%);
+      box-shadow: 0 0 30px hsl(var(--shadow) / 15%);
+
+      & h3 {
+        color: hsl(var(--primary));
+      }
+    }
+  }
+}
+
+.card p {
+  word-break: normal;
+  overflow-wrap: break-word;
+}

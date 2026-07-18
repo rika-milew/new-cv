@@ -17,7 +17,7 @@ export default function About() {
       ref={ref}
       className={cx('section', styles.section, isRevealed && 'show')}
     >
-      <div className={cx('container')}>
+      <div className={cx('global-container', styles.container)}>
         <Heading as="h2">About Me</Heading>
         <div className={cx('about-content', styles.content)}>
           <div className={cx('about-photo', styles.photo)}>

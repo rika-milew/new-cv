@@ -1,4 +1,9 @@
-export const skillsConfig = [
+type SkillCategory = {
+  title: string;
+  items: readonly string[];
+};
+
+export const skillsConfig: SkillCategory[] = [
   {
     title: 'Frontend',
     items: ['React', 'TypeScript', 'JavaScript', 'HTML5', 'CSS3', 'Zustand'],

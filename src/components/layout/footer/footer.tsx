@@ -17,7 +17,7 @@ export default function Footer() {
 
   return (
     <footer className={cx('footer')}>
-      <div className={cx('container')}>
+      <div className={cx('global-container', 'container')}>
         <p>{footerConfig.copyright}</p>
         <div className={cx('icons')}>
           {footerConfig.links.map((link) => (
@@ -29,7 +29,7 @@ export default function Footer() {
               aria-label={link.name}
             >
               <div
-                className={cx('footer-icon', styles.icon)}
+                className={cx('footer-icon')}
                 style={getIconStyle(link.icon)}
               />
             </a>

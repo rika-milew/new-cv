@@ -10,6 +10,7 @@ type ButtonProps = {
   variant: 'primary' | 'secondary';
   onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
   type?: 'button' | 'submit' | 'reset';
+  disabled?: boolean;
   children: ReactNode;
 };
 
@@ -18,6 +19,7 @@ export default function Button({
   variant,
   onClick,
   type = 'button',
+  disabled = false,
   children,
 }: ButtonProps) {
   if (href) {
@@ -29,7 +31,12 @@ export default function Button({
   }
 
   return (
-    <button type={type} onClick={onClick} className={cx('button', variant)}>
+    <button
+      type={type}
+      onClick={onClick}
+      disabled={disabled}
+      className={cx('button', variant)}
+    >
       {children}
     </button>
   );
