@@ -1,0 +1,87 @@
+.container {
+  max-width: 64rem;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+
+  & > * {
+    min-width: 0;
+  }
+
+  @media screen and (width >= 768px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
+.card {
+  cursor: default;
+
+  padding: 1.5rem;
+  border: 1px solid hsl(var(--border) / 50%);
+  border-radius: 0.75rem;
+
+  color: hsl(var(--card-foreground));
+
+  background-color: hsl(var(--card) / 50%);
+
+  transition: border var(--transition-duration)
+    var(--transition-timing-function);
+
+  &:active {
+    border-color: hsl(var(--primary) / 40%);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      border-color: hsl(var(--primary) / 40%);
+    }
+  }
+}
+
+.card p {
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+.badges-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.badge {
+  padding: 0.125rem 0.625rem;
+  border: 1px solid hsl(var(--border) / 50%);
+  border-radius: 9999px;
+
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1rem;
+  color: hsl(var(--foreground));
+
+  background-color: hsl(var(--muted) / 50%);
+
+  transition: all var(--transition-duration) var(--transition-timing-function);
+}
+
+.skill-badge {
+  &:active {
+    border-color: hsl(var(--primary) / 40%);
+    background-color: hsl(var(--primary) / 20%);
+    box-shadow: 0 0 20px hsl(var(--shadow) / 30%);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      border-color: hsl(var(--primary) / 40%);
+      background-color: hsl(var(--primary) / 20%);
+      box-shadow: 0 0 20px hsl(var(--shadow) / 30%);
+    }
+  }
+}

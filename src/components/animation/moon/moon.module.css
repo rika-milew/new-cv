@@ -1,0 +1,40 @@
+.moon {
+  position: absolute;
+  z-index: 5;
+  top: 5rem;
+  right: 2.5rem;
+
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+
+  background: linear-gradient(
+    to bottom right,
+    hsl(45deg 80% 90% / 20%),
+    hsl(45deg 80% 90% / 5%)
+  );
+
+  animation: moon-glow 4s ease-in-out infinite;
+
+  @media (width >= 768px) {
+    top: 5rem;
+    right: 7.5rem;
+    width: 12rem;
+    height: 12rem;
+  }
+}
+
+@keyframes moon-glow {
+  0%,
+  100% {
+    box-shadow:
+      0 0 60px 20px hsl(45deg 80% 70% / 15%),
+      0 0 120px 60px hsl(263deg 84% 65% / 10%);
+  }
+
+  50% {
+    box-shadow:
+      0 0 80px 30px hsl(45deg 80% 70% / 25%),
+      0 0 160px 80px hsl(263deg 84% 65% / 15%);
+  }
+}

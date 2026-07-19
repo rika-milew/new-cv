@@ -1,0 +1,34 @@
+.starfield {
+  pointer-events: none;
+
+  position: fixed;
+  z-index: 0;
+  inset: 3.25rem 0 0;
+
+  overflow: hidden;
+
+  width: 100%;
+  height: 100%;
+}
+
+.star {
+  position: absolute;
+
+  border-radius: 50%;
+
+  background: hsl(var(--card-foreground));
+
+  animation: twinkle var(--duration) ease-in-out infinite;
+  animation-delay: var(--delay);
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}

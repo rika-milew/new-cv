@@ -3,24 +3,30 @@
   "version": "1.0.0",
   "description": "A responsive personal CV/portfolio website built with HTML, CSS, and JavaScript.",
   "main": "index.js",
+  "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
-    "lint": "eslint",
-    "lint:fix": "eslint . --fix",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint .",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write .",
+    "stylelint": "npx stylelint \"**/*.css\"",
+    "stylelint:fix": "npx stylelint \"**/*.css\" --fix",
     "prepare": "husky",
+    "precommit": "npx lint-staged",
     "deploy": "npm run build && vercel --prod --yes"
   },
   "lint-staged": {
-    "*.{js,mjs}": [
-      "eslint --fix",
+    "src/**/*.{js, jsx,ts,tsx}": [
+      "eslint",
       "prettier --write"
     ],
-    "*.{json,css,html,md}": [
+    "src/**/*.{css,scss}": [
+      "stylelint --fix",
       "prettier --write"
     ]
   },
@@ -28,25 +34,40 @@
     "type": "git",
     "url": "git+https://github.com/rika-milew/new-cv.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/rika-milew/new-cv/issues"
-  },
-  "homepage": "https://github.com/rika-milew/new-cv#readme",
-  "devDependencies": {
-    "@eslint/js": "^10.0.1",
-    "eslint": "^10.2.0",
-    "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-unicorn": "^64.0.0",
-    "globals": "^17.5.0",
-    "husky": "^9.1.7",
-    "lint-staged": "^16.4.0",
-    "prettier": "^3.8.2",
-    "vite": "^8.0.8"
-  },
+  "author": "Erika Milevskaya",
   "dependencies": {
-    "@emailjs/browser": "^4.4.1"
+    "@emailjs/browser": "^4.4.1",
+    "classnames": "^2.5.1",
+    "next": "^16.2.9",
+    "next-intl": "^4.13.1",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.4",
+    "@next/eslint-plugin-next": "^16.2.9",
+    "@types/classnames": "^2.3.0",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "^16.2.9",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-import-resolver-typescript": "^4.4.4",
+    "eslint-plugin-boundaries": "^6.0.2",
+    "eslint-plugin-prettier": "^5.5.6",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-unicorn": "^64.0.0",
+    "husky": "^9.1.7",
+    "jsdom": "^29.1.1",
+    "lint-staged": "^16.4.0",
+    "prettier": "^3.8.4",
+    "stylelint": "^17.13.0",
+    "stylelint-config-clean-order": "^9.0.0",
+    "stylelint-config-standard": "^40.0.0",
+    "stylelint-order": "^8.1.1",
+    "stylelint-prettier": "^5.0.3",
+    "typescript": "~6.0.2",
+    "typescript-eslint": "^8.64.0"
   }
 }

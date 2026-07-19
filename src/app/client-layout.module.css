@@ -1,0 +1,9 @@
+.decorations {
+  pointer-events: none;
+
+  position: fixed;
+  z-index: 0;
+  inset: 0;
+
+  min-height: 100vh;
+}
