@@ -11,7 +11,7 @@ type HeadingProps = {
   children: ReactNode;
 };
 
-export default function Heading({
+export function Heading({
   as: Tag = 'h2',
   gradient = false,
   className,

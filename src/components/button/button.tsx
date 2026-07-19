@@ -14,7 +14,7 @@ type ButtonProps = {
   children: ReactNode;
 };
 
-export default function Button({
+export function Button({
   href,
   variant,
   onClick,

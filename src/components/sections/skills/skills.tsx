@@ -2,13 +2,13 @@
 
 import classNames from 'classnames/bind';
 import { useSectionReveal } from '@/hooks/use-section-reveal';
-import Heading from '@/components/heading/heading';
+import { Heading } from '@/components/heading/heading';
 import { skillsConfig } from './skills.config';
 import styles from './skills.module.css';
 
 const cx = classNames.bind(styles);
 
-export default function Skills() {
+export function Skills() {
   const [ref, isRevealed] = useSectionReveal();
 
   return (

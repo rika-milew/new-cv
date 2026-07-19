@@ -9,7 +9,7 @@ import styles from './header.module.css';
 
 const cx = classNames.bind(styles);
 
-export default function Header() {
+export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const burgerRef = useRef<HTMLButtonElement>(null);

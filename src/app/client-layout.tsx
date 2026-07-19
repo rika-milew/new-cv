@@ -3,9 +3,9 @@
 import dynamic from 'next/dynamic';
 import type { ReactNode } from 'react';
 import classNames from 'classnames/bind';
-import Header from '@/components/layout/header/header';
-import Footer from '@/components/layout/footer/footer';
-import Moon from '@/components/animation/moon/moon';
+import { Header } from '@/components/layout/header/header';
+import { Footer } from '@/components/layout/footer/footer';
+import { Moon } from '@/components/animation/moon/moon';
 import styles from './client-layout.module.css';
 
 const cx = classNames.bind(styles);

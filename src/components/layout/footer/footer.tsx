@@ -6,7 +6,7 @@ const cx = classNames.bind(styles);
 
 export type FooterIcon = 'github' | 'linkedin' | 'telegram';
 
-export default function Footer() {
+export function Footer() {
   const getIconStyle = (icon: FooterIcon) => {
     const iconConfig = footerConfig.icons[icon];
     return {

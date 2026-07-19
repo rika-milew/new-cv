@@ -1,3 +1,3 @@
-export default function PortfolioView() {
+export function PortfolioView() {
   return <main>{/* <PortfolioSection /> */}</main>;
 }

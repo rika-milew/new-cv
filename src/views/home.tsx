@@ -5,7 +5,7 @@ import Portfolio from '@/components/sections/portfolio/portfolio';
 import Education from '@/components/sections/education/education';
 import { Contacts } from '@/components/sections/contacts/contacts';
 
-export default function Home() {
+export function Home() {
   return (
     <>
       <main>

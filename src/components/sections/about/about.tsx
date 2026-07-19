@@ -3,13 +3,13 @@
 import Image from 'next/image';
 import classNames from 'classnames/bind';
 import { useSectionReveal } from '@/hooks/use-section-reveal';
-import Heading from '../../heading/heading';
+import { Heading } from '@/components/heading/heading';
 import styles from './about.module.css';
 import photo from '@/../public/images/photo1.jpg';
 
 const cx = classNames.bind(styles);
 
-export default function About() {
+export function About() {
   const [ref, isRevealed] = useSectionReveal();
   return (
     <section

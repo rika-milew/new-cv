@@ -1,14 +1,14 @@
 import Link from 'next/link';
 import classNames from 'classnames/bind';
 import Image from 'next/image';
-import Button from '../../button/button';
-import Heading from '../../heading/heading';
-import Planet from '@/components/animation/planet/planet';
+import { Button } from '@/components/button/button';
+import { Heading } from '@/components/heading/heading';
+import { Planet } from '@/components/animation/planet/planet';
 import styles from './hero.module.css';
 
 const cx = classNames.bind(styles);
 
-export default function Hero() {
+export function Hero() {
   return (
     <section id="hero" className={`section} ${cx('section', 'hero')}`}>
       <Planet />

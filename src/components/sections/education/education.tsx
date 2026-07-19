@@ -9,7 +9,7 @@ import styles from './education.module.css';
 
 const cx = classNames.bind(styles);
 
-export default function Education() {
+export function Education() {
   const [ref, isRevealed] = useSectionReveal();
 
   return (

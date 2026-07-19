@@ -3,7 +3,7 @@ import styles from './planet.module.css';
 
 const cx = classNames.bind(styles);
 
-export default function Planet() {
+export function Planet() {
   return (
     <div className={cx('container')}>
       <div className={cx('planet')} />

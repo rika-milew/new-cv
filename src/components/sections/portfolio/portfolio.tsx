@@ -3,12 +3,12 @@
 import classNames from 'classnames/bind';
 import { useSectionReveal } from '@/hooks/use-section-reveal';
 import { portfolioConfig } from './portfolio.config';
-import Heading from '@/components/heading/heading';
+import { Heading } from '@/components/heading/heading';
 import styles from './portfolio.module.css';
 
 const cx = classNames.bind(styles);
 
-export default function Portfolio() {
+export function Portfolio() {
   const [ref, isRevealed] = useSectionReveal();
 
   return (
