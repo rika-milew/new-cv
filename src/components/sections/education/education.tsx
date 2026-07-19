@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import classNames from 'classnames/bind';
-import Heading from '@/components/heading/heading';
+import { Heading } from '@/components/heading/heading';
 import { useSectionReveal } from '@/hooks/use-section-reveal';
 import { educationConfig } from './education.config';
 import styles from './education.module.css';
