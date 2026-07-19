@@ -1,5 +1,5 @@
 .heading {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-space-grotesk), sans-serif;
   text-align: center;
 }
 
@@ -115,7 +115,7 @@
   }
 }
 
-.portfilio-heading {
+.portfolio-heading {
   margin-bottom: 0.375rem;
   color: hsl(var(--foreground));
   letter-spacing: -0.025em;

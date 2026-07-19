@@ -53,6 +53,8 @@
 
   background-color: hsl(var(--muted-foreground));
 
+  mask-image: url('/icons/cross.svg');
+  mask-image: url('/icons/cross.svg');
   mask-repeat: no-repeat;
   mask-position: center;
   mask-size: contain;
@@ -72,7 +74,7 @@
 }
 
 .heading {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-space-grotesk), sans-serif;
   font-size: 1.25rem;
   font-weight: 600;
   line-height: 1.75rem;

@@ -5,7 +5,7 @@ import { Modal } from '@/components/modal/modal';
 import { MODAL_MESSAGES } from '@/components/modal/modal-messages.config';
 import { FORM_STATUS } from './form-status.config';
 import { useForm } from '@/hooks/use-form';
-import Button from '@/components/button/button';
+import { Button } from '@/components/button/button';
 import styles from './contact-form.module.css';
 
 const cx = classNames.bind(styles);
@@ -74,6 +74,7 @@ export function ContactForm() {
           />
         </div>
         <Button type="submit" variant="primary" disabled={isLoading}>
+          <span className={cx('button-icon')} aria-hidden="true" />
           {isLoading ? 'Sending...' : 'Send message'}
         </Button>
         {status !== 'idle' && (

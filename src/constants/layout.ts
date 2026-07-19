@@ -7,7 +7,7 @@ export const BREAKPOINTS = {
 export const NAV_ITEMS = [
   { href: '/#about', label: 'About' },
   { href: '/#skills', label: 'Skills' },
-  { href: '/portfolio', label: 'Portfolio' },
+  { href: '/#portfolio', label: 'Portfolio' },
   { href: '/#education', label: 'Education' },
   { href: '/#contacts', label: 'Contacts' },
 ] as const;

@@ -10,7 +10,7 @@ const cx = classNames.bind(styles);
 
 export function Hero() {
   return (
-    <section id="hero" className={`section} ${cx('section', 'hero')}`}>
+    <section id="hero" className={cx('section', 'hero')}>
       <Planet />
       <div className={cx('global-container', styles.container)}>
         <p className={cx('hero-text')}>Hello, I&apos;m</p>

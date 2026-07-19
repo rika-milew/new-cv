@@ -94,3 +94,24 @@
 .textarea::-webkit-scrollbar-thumb:hover {
   background: hsl(var(--primary) / 80%);
 }
+
+.button-icon {
+  flex-shrink: 0;
+
+  width: 1rem;
+  height: 1rem;
+
+  background-color: hsl(var(--foreground));
+  background-size: cover;
+
+  mask-image: url('/icons/telegram.svg');
+  mask-image: url('/icons/telegram.svg');
+  mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-position: center;
+  mask-size: contain;
+  mask-size: contain;
+
+  transition: all var(--transition-duration) var(--transition-timing-function);
+}

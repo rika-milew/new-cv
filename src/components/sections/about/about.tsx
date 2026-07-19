@@ -16,9 +16,12 @@ export function About() {
       id="about"
       ref={ref}
       className={cx('section', styles.section, isRevealed && 'show')}
+      aria-labelledby="about-title"
     >
       <div className={cx('global-container', styles.container)}>
-        <Heading as="h2">About Me</Heading>
+        <Heading as="h2" id="about-title">
+          About Me
+        </Heading>
         <div className={cx('about-content', styles.content)}>
           <div className={cx('about-photo', styles.photo)}>
             <Image

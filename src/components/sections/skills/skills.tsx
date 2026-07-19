@@ -16,9 +16,12 @@ export function Skills() {
       id="skills"
       ref={ref}
       className={cx('section', styles.section, isRevealed && 'show')}
+      aria-labelledby="skills-title"
     >
       <div className={cx('global-container', styles.container)}>
-        <Heading as="h2">Skills & Technologies</Heading>
+        <Heading as="h2" id="skills-title">
+          Skills & Technologies
+        </Heading>
         <div className={cx('cards-container')}>
           {skillsConfig.map((group) => (
             <div key={group.title} className={cx('card')}>

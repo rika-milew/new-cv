@@ -5,7 +5,7 @@ export type IconConfig = {
 };
 
 export type ContactItem = {
-  type: 'email' | 'github' | 'linkedin' | 'telegram';
+  type: IconType;
   href: string;
   heading: string;
   linkText: string;
@@ -18,10 +18,9 @@ export type ContactsConfig = {
   items: ContactItem[];
 };
 
-export const ICONS: Record<
-  'email' | 'github' | 'linkedin' | 'telegram',
-  IconConfig
-> = {
+type IconType = 'email' | 'github' | 'telegram';
+
+export const ICONS: Record<IconType, IconConfig> = {
   email: {
     class: 'contact__icon_mail',
     maskImage: 'url(/icons/mail.svg)',
@@ -31,11 +30,6 @@ export const ICONS: Record<
     class: 'contact__icon_github',
     maskImage: 'url(/icons/github.svg)',
     webkitMaskImage: 'url(/icons/github.svg)',
-  },
-  linkedin: {
-    class: 'contact__icon_linkedin',
-    maskImage: 'url(/icons/linkedin.svg)',
-    webkitMaskImage: 'url(/icons/linkedin.svg)',
   },
   telegram: {
     class: 'contact__icon_telegram',
@@ -64,13 +58,6 @@ export const contactsConfig: ContactsConfig = {
       heading: 'GitHub',
       linkText: 'github.com/rika-milew',
       icon: ICONS.github,
-    },
-    {
-      type: 'linkedin' as const,
-      href: 'https://linkedin.com/in/rika-milew',
-      heading: 'LinkedIn',
-      linkText: 'linkedin.com/in/rika-milew',
-      icon: ICONS.linkedin,
     },
     {
       type: 'telegram' as const,

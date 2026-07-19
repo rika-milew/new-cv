@@ -72,13 +72,13 @@
   transition: all var(--transition-duration) var(--transition-timing-function);
 }
 
-.portfolio-links {
+.links {
   display: flex;
   gap: 0.5rem;
   align-items: center;
 }
 
-.portfolio-icon {
+.icon {
   width: 1rem;
   height: 1rem;
 
@@ -95,12 +95,12 @@
     mask-image: url('/icons/github.svg');
   }
 
-  &.link {
+  &.demo {
     mask-image: url('/icons/link.svg');
   }
 }
 
-.portfolio-link {
+.link {
   display: inline-flex;
   flex-direction: row;
   gap: 0.5rem;
@@ -124,18 +124,20 @@
   transition: all var(--transition-duration) var(--transition-timing-function);
 
   &:active {
+    color: hsl(var(--primary-foreground));
     background-color: hsl(var(--primary));
 
-    & .portfolio-icon {
+    & .icon {
       background-color: hsl(var(--primary-foreground));
     }
   }
 
   @media (hover: hover) and (pointer: fine) {
     &:hover {
+      color: hsl(var(--primary-foreground));
       background-color: hsl(var(--primary));
 
-      & .portfolio-icon {
+      & .icon {
         background-color: hsl(var(--primary-foreground));
       }
     }
@@ -153,7 +155,6 @@
 
   @media screen and (width >= 768px) {
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
   }
 
   @media screen and (width >= 1024px) {

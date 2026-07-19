@@ -5,7 +5,7 @@ import { contactsConfig } from './contacts.config';
 import { ContactItem } from './contact-item/contact-item';
 import { ContactForm } from './contact-form/contact-form';
 import { useSectionReveal } from '@/hooks/use-section-reveal';
-import Heading from '@/components/heading/heading';
+import { Heading } from '@/components/heading/heading';
 
 import styles from './contacts.module.css';
 
@@ -24,7 +24,9 @@ export function Contacts() {
       aria-labelledby="contacts-title"
     >
       <div className={cx('global-container', styles.container)}>
-        <Heading as="h2">{contactsConfig.title}</Heading>
+        <Heading as="h2" id="contacts-title">
+          {contactsConfig.title}
+        </Heading>
         <div className={cx('contacts-container')}>
           <div className={cx('info')}>
             <p>{contactsConfig.description}</p>

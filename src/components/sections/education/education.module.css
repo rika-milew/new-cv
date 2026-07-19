@@ -65,7 +65,7 @@
 .establishment {
   margin-bottom: 0.25rem;
 
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-space-grotesk), sans-serif;
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.5rem;

@@ -16,18 +16,19 @@ export function Portfolio() {
       id="portfolio"
       ref={ref}
       className={cx('section', styles.section, { show: isRevealed })}
+      aria-labelledby="portfolio-title"
     >
       <div className={cx('global-container', 'container')}>
-        <Heading as="h2" gradient>
+        <Heading as="h2" id="portfolio-title" gradient>
           Portfolio
         </Heading>
         <div className={cx('cards-container')}>
           {portfolioConfig.map((project) => (
             <div key={project.title} className={cx('card')}>
-              <Heading as="h3" className="portfilio-heading">
+              <Heading as="h3" className="portfolio-heading">
                 {project.title}
               </Heading>
-              <p className={styles.description}>{project.description}</p>
+              <p className={cx('description')}>{project.description}</p>
               <div className={cx('badges-container')}>
                 {project.badges.map((badge) => (
                   <div key={badge} className={cx('badge')}>
@@ -35,23 +36,23 @@ export function Portfolio() {
                   </div>
                 ))}
               </div>
-              <div className={styles.links}>
+              <div className={cx('links')}>
                 <a
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={cx('portfolio-link')}
+                  className={cx('link')}
                 >
-                  <div className={cx('portfolio-icon', 'github')} />
+                  <div className={cx('icon', 'github')} />
                   <span>GitHub</span>
                 </a>
                 <a
                   href={project.demo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={cx('portfolio-link')}
+                  className={cx('link')}
                 >
-                  <div className={cx('portfolio-icon', 'link')} />
+                  <div className={cx('icon', 'demo')} />
                   <span>Demo</span>
                 </a>
               </div>

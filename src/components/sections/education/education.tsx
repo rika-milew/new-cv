@@ -17,9 +17,10 @@ export function Education() {
       id="education"
       ref={ref}
       className={cx('section', styles.section, { show: isRevealed })}
+      aria-labelledby="education-title"
     >
       <div className={cx('global-container', styles.container)}>
-        <Heading as="h2" gradient>
+        <Heading as="h2" id="education-title" gradient>
           Education
         </Heading>
         <div className={cx('timeline')}>

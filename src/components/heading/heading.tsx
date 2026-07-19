@@ -8,6 +8,7 @@ type HeadingProps = {
   as?: 'h1' | 'h2' | 'h3';
   gradient?: boolean;
   className?: string;
+  id?: string;
   children: ReactNode;
 };
 
@@ -15,10 +16,11 @@ export function Heading({
   as: Tag = 'h2',
   gradient = false,
   className,
+  id,
   children,
 }: HeadingProps) {
   return (
-    <Tag className={cx('heading', Tag, { gradient }, className)}>
+    <Tag className={cx('heading', Tag, { gradient }, className)} id={id}>
       {children}
     </Tag>
   );

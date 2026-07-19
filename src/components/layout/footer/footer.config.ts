@@ -10,7 +10,7 @@ export const footerConfig = {
     },
     {
       name: 'LinkedIn',
-      url: 'https://linkedin.com/in/rika-milew',
+      url: 'https://www.linkedin.com/in/erika-gumerova-777927192/',
       icon: 'linkedin' as const,
     },
     {

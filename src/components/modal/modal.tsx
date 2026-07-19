@@ -4,7 +4,7 @@ import classNames from 'classnames/bind';
 import Image from 'next/image';
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import Button from '../button/button';
+import { Button } from '../button/button';
 
 import styles from './modal.module.css';
 
@@ -69,8 +69,8 @@ export function Modal({ isOpen, data, onClose }: ModalProps) {
           src={ICONS[data.type]}
           alt={data.type}
           className={cx('modal-icon')}
-          width={48}
-          height={48}
+          width={56}
+          height={56}
           priority
         />
         <p className={cx('heading')}>{data.title}</p>
