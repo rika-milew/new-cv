@@ -6,8 +6,6 @@ import { getEmailJSConfig } from '@/components/sections/contacts/contact-form/em
 import type { FormStatus } from '@/components/sections/contacts/contact-form/form-status.config';
 import type { SyntheticEvent } from 'react';
 
-const MODAL_DELAY = 3000;
-
 type UseFormReturn = {
   formRef: React.RefObject<HTMLFormElement | null>;
   isLoading: boolean;
@@ -50,13 +48,11 @@ export function useForm(): UseFormReturn {
         setStatus('success');
         setIsModalOpen(true);
         formRef.current?.reset();
-        setTimeout(() => setStatus('idle'), MODAL_DELAY);
       })
       .catch((error: unknown): void => {
         setStatus('error');
         setIsModalOpen(true);
         console.error('EmailJS error:', error);
-        setTimeout(() => setStatus('idle'), MODAL_DELAY);
       })
       .finally(() => {
         setIsLoading(false);
@@ -65,6 +61,7 @@ export function useForm(): UseFormReturn {
 
   const closeModal = useCallback((): void => {
     setIsModalOpen(false);
+    setStatus('idle');
   }, []);
 
   return {

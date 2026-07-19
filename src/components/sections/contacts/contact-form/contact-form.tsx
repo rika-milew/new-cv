@@ -3,7 +3,6 @@
 import classNames from 'classnames/bind';
 import { Modal } from '@/components/modal/modal';
 import { MODAL_MESSAGES } from '@/components/modal/modal-messages.config';
-import { FORM_STATUS } from './form-status.config';
 import { useForm } from '@/hooks/use-form';
 import { Button } from '@/components/button/button';
 import styles from './contact-form.module.css';
@@ -14,7 +13,6 @@ export function ContactForm() {
   const { formRef, isLoading, status, isModalOpen, handleSubmit, closeModal } =
     useForm();
 
-  const statusConfig = FORM_STATUS[status];
   const modalData =
     status === 'success' ? MODAL_MESSAGES.success : MODAL_MESSAGES.error;
 
@@ -77,16 +75,6 @@ export function ContactForm() {
           <span className={cx('button-icon')} aria-hidden="true" />
           {isLoading ? 'Sending...' : 'Send message'}
         </Button>
-        {status !== 'idle' && (
-          <p
-            id="form-status"
-            role="status"
-            aria-live="polite"
-            className={cx('form-status', statusConfig.className)}
-          >
-            {statusConfig.text}
-          </p>
-        )}
       </form>
 
       <Modal isOpen={isModalOpen} data={modalData} onClose={closeModal} />
