@@ -62,16 +62,13 @@ export function Header() {
           &lt;Dev /&gt;
         </Link>
 
-        <nav
-          ref={menuRef}
-          className={cx('header-menu', { active: isMenuOpen })}
-        >
-          <ul className={cx('header-list')}>
+        <nav ref={menuRef} className={cx('menu', { active: isMenuOpen })}>
+          <ul className={cx('list')}>
             {NAV_ITEMS.map((item) => (
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className={cx('header-link')}
+                  className={cx('link')}
                   onClick={closeMenu}
                 >
                   {item.label}
@@ -83,7 +80,7 @@ export function Header() {
 
         <button
           ref={burgerRef}
-          className={cx('header-burger', { active: isMenuOpen })}
+          className={cx('burger', { active: isMenuOpen })}
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >

@@ -4,8 +4,7 @@ import classNames from 'classnames/bind';
 import Image from 'next/image';
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { Button } from '../button/button';
-
+import { Button } from '@/components/button/button';
 import styles from './modal.module.css';
 
 const cx = classNames.bind(styles);
@@ -31,8 +30,8 @@ type ModalProps = {
 
 export function Modal({ isOpen, data, onClose }: ModalProps) {
   useEffect(() => {
-    const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
         onClose();
       }
     };
@@ -76,7 +75,6 @@ export function Modal({ isOpen, data, onClose }: ModalProps) {
         <p className={cx('heading')}>{data.title}</p>
         <p className={cx('text')}>{data.message}</p>
         <Button variant="primary" onClick={onClose}>
-          {' '}
           Close
         </Button>
       </div>

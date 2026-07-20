@@ -4,10 +4,10 @@ import { useState, useRef, useCallback } from 'react';
 import emailjs from '@emailjs/browser';
 import { getEmailJSConfig } from '@/components/sections/contacts/contact-form/emailjs.config';
 import type { FormStatus } from '@/components/sections/contacts/contact-form/form-status.config';
-import type { SyntheticEvent } from 'react';
+import type { SyntheticEvent, RefObject } from 'react';
 
 type UseFormReturn = {
-  formRef: React.RefObject<HTMLFormElement | null>;
+  formRef: RefObject<HTMLFormElement | null>;
   isLoading: boolean;
   status: FormStatus;
   isModalOpen: boolean;
@@ -34,6 +34,9 @@ export function useForm(): UseFormReturn {
 
     if (!config.SERVICE_ID || !config.TEMPLATE_ID || !config.PUBLIC_KEY) {
       console.error('EmailJS config is empty');
+      setIsLoading(false);
+      setStatus('error');
+      setIsModalOpen(true);
       return;
     }
 
