@@ -12,6 +12,8 @@
 }
 
 .star {
+  will-change: opacity;
+
   position: absolute;
 
   border-radius: 50%;
@@ -30,5 +32,12 @@
 
   50% {
     opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .star {
+    opacity: 0.6;
+    animation: none;
   }
 }

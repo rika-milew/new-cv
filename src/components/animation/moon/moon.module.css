@@ -13,14 +13,20 @@
     hsl(45deg 80% 90% / 20%),
     hsl(45deg 80% 90% / 5%)
   );
-
-  animation: moon-glow 4s ease-in-out infinite;
+  box-shadow:
+    0 0 60px 20px hsl(45deg 80% 70% / 15%),
+    0 0 120px 60px hsl(263deg 84% 65% / 10%);
 
   @media (width >= 768px) {
     top: 5rem;
     right: 7.5rem;
+
     width: 12rem;
     height: 12rem;
+
+    box-shadow: none;
+
+    animation: moon-glow 4s ease-in-out infinite;
   }
 }
 
