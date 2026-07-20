@@ -7,15 +7,20 @@
 .cards-container {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  column-gap: 2rem;
 
   & > * {
     min-width: 0;
   }
 
-  @media screen and (width >= 768px) {
+  @media screen and (width >= 650px) {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+  }
+
+  @media screen and (width >= 890px) {
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    gap: 1.5rem 2rem;
   }
 }
 
