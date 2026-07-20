@@ -1,7 +1,7 @@
 {
   "name": "new-cv",
   "version": "1.0.0",
-  "description": "A responsive personal CV/portfolio website built with HTML, CSS, and JavaScript.",
+  "description": "A responsive personal CV/portfolio website.",
   "main": "index.js",
   "private": true,
   "type": "module",
@@ -41,7 +41,8 @@
     "next": "^16.2.9",
     "next-intl": "^4.13.1",
     "react": "^19.2.7",
-    "react-dom": "^19.2.7"
+    "react-dom": "^19.2.7",
+    "swiper": "^14.0.6"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.4",

@@ -25,10 +25,9 @@
     hsl(239deg 90% 70%)
   );
 
-  animation: orbit 20s linear infinite;
-
   @media (width >= 768px) {
     display: block;
+    animation: orbit 20s linear infinite;
   }
 }
 

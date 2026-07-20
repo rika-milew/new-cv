@@ -5,8 +5,38 @@ type SkillCategory = {
 
 export const skillsConfig: SkillCategory[] = [
   {
-    title: 'Frontend',
-    items: ['React', 'TypeScript', 'JavaScript', 'HTML5', 'CSS3', 'Zustand'],
+    title: 'Core',
+    items: [
+      'React',
+      'Next.js',
+      'TypeScript',
+      'JavaScript',
+      'Redux',
+      'Zustand',
+      'SSG / SSR',
+    ],
+  },
+  {
+    title: 'Styling & Layout',
+    items: [
+      'HTML5',
+      'CSS3',
+      'CSS Modules',
+      'Responsive Design',
+      'Accessibility (a11y)',
+    ],
+  },
+  {
+    title: 'Data & Routing',
+    items: ['TanStack Query', 'TanStack Router', 'REST API', 'Server Actions'],
+  },
+  {
+    title: 'Backend',
+    items: ['Node.js', 'Supabase', 'PostgreSQL'],
+  },
+  {
+    title: 'Testing',
+    items: ['Vitest', 'React Testing Library', 'User Event'],
   },
   {
     title: 'Tools',
@@ -17,14 +47,11 @@ export const skillsConfig: SkillCategory[] = [
       'Webpack',
       'VS Code',
       'Chrome DevTools',
+      'Markdown',
       'Figma',
       'ESLint',
       'Prettier',
       'Biome',
     ],
-  },
-  {
-    title: 'Other',
-    items: ['REST API', 'Node.js', 'Markdown', 'Vitest', 'Responsive Design'],
   },
 ];

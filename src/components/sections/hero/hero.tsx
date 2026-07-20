@@ -17,7 +17,7 @@ export function Hero() {
         <Heading as="h1" gradient>
           Erika Milevskaya
         </Heading>
-        <p className={cx('hero-heading')}>Frontend Developer</p>
+        <p className={cx('hero-heading')}>Web Developer</p>
         <p className={cx('hero-description')}>
           Building interfaces that inspire. React, TypeScript, and a touch of
           cosmic magic ✨

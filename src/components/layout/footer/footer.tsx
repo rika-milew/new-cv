@@ -28,10 +28,7 @@ export function Footer() {
               rel="noopener noreferrer"
               aria-label={link.name}
             >
-              <div
-                className={cx('footer-icon')}
-                style={getIconStyle(link.icon)}
-              />
+              <div className={cx('icon')} style={getIconStyle(link.icon)} />
             </a>
           ))}
         </div>

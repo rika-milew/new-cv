@@ -53,7 +53,7 @@ export default function Starfield() {
           '--delay': star.delay,
         };
 
-        return <div key={star.id} className={styles.star} style={starStyle} />;
+        return <div key={star.id} className={cx('star')} style={starStyle} />;
       })}
     </div>
   );

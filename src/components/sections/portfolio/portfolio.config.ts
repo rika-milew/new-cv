@@ -8,6 +8,23 @@ type PortfolioItem = {
 
 export const portfolioConfig: PortfolioItem[] = [
   {
+    title: 'Swagger Editor App',
+    description:
+      'A full-featured Swagger/OpenAPI editor with an interactive viewer, API request execution and analytics.',
+    badges: [
+      'Next.js',
+      'React',
+      'Typescript',
+      'Supabase',
+      'Zustand',
+      'Chakra UI',
+      'CodeMirror',
+      'Vitest',
+    ],
+    github: 'https://github.com/rika-milew/swagger-editor-app',
+    demo: 'https://reactful-swagger-editor-app.vercel.app/',
+  },
+  {
     title: 'Tandem App',
     description:
       'Web application for preparing for technical interviews with interactive widgets.',

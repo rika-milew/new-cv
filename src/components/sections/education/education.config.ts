@@ -63,7 +63,7 @@ export const educationConfig: EducationItem[] = [
     icon: 'book',
   },
   {
-    year: '2026 — Present',
+    year: '2026',
     establishment: 'React Course. Stage 3 | RS School Educational Platform',
     description:
       'Frontend development course focused on React and modern ecosystem tools, ' +
