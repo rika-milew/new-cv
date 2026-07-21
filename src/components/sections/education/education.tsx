@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { useState } from 'react';
 import classNames from 'classnames/bind';
 import { Heading } from '@/components/heading/heading';
 import { useSectionReveal } from '@/hooks/use-section-reveal';
@@ -11,6 +12,11 @@ const cx = classNames.bind(styles);
 
 export function Education() {
   const [ref, isRevealed] = useSectionReveal();
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+  const toggleItem = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
 
   return (
     <section
@@ -36,12 +42,28 @@ export function Education() {
                     height={14}
                   />
                 </div>
-                <div className={cx('card')}>
-                  <div className={cx('year')}>{item.year}</div>
-                  <div className={cx('establishment')}>
-                    {item.establishment}
+                <div
+                  className={cx('card', { open: openIndex === index })}
+                  onClick={() => toggleItem(index)}
+                >
+                  <div className={cx('card-header')}>
+                    <div className={cx('card-header-content')}>
+                      <div className={cx('year')}>{item.year}</div>
+                      <div className={cx('establishment')}>
+                        {item.establishment}
+                      </div>
+                    </div>
+                    <div
+                      className={cx('arrow', {
+                        open: openIndex === index,
+                      })}
+                    ></div>
                   </div>
-                  <div className={cx('description')}>{item.description}</div>
+                  <div
+                    className={cx('description', { open: openIndex === index })}
+                  >
+                    {item.description}
+                  </div>
                 </div>
               </div>
             ))}

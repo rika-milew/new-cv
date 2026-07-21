@@ -80,9 +80,22 @@
 }
 
 .description {
+  overflow: hidden;
+
+  max-height: 0;
+
   font-size: 0.875rem;
   line-height: 1.25rem;
   color: hsl(var(--muted-foreground));
+
+  transition:
+    max-height 0.3s ease,
+    margin-top 0.3s ease;
+
+  &.open {
+    max-height: 30rem;
+    margin-top: 0.75rem;
+  }
 }
 
 .card {
@@ -123,4 +136,65 @@
 .card p {
   word-break: normal;
   overflow-wrap: break-word;
+}
+
+.card-header {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.card-header-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.arrow {
+  cursor: pointer;
+
+  position: relative;
+
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+
+  width: 1.5rem;
+  height: 1.5rem;
+
+  color: hsl(var(--muted-foreground));
+
+  transition:
+    transform 0.3s,
+    color 0.3s;
+
+  &:active {
+    color: hsl(var(--primary));
+  }
+
+  &::after {
+    content: '';
+
+    transform: rotate(45deg);
+
+    width: 0.5rem;
+    height: 0.5rem;
+    margin-top: -0.15rem;
+    border-right: 2px solid currentcolor;
+    border-bottom: 2px solid currentcolor;
+
+    transition: transform 0.3s;
+  }
+
+  &.open::after {
+    transform: rotate(-135deg);
+    margin-top: 0.15rem;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      color: hsl(var(--primary));
+    }
+  }
 }
