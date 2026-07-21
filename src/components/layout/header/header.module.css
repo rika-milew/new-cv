@@ -2,6 +2,7 @@
   position: sticky;
   z-index: 10;
 
+  width: 100%;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   border-bottom: 1px solid hsl(var(--border) / 50%);
@@ -28,6 +29,9 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+
+  width: 100%;
+  max-width: 100%;
 }
 
 .burger-line {
@@ -169,14 +173,19 @@
   color: hsl(var(--primary));
 }
 
+@media screen and (width >= 1024px) {
+  .container {
+    width: 100%;
+    max-width: 72rem;
+  }
+}
+
 @media screen and (width >= 768px) {
   .container {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-
-    max-width: 72rem;
   }
 
   .menu {

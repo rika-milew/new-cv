@@ -1,0 +1,116 @@
+.slider {
+  position: relative;
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0 auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.slider-viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.slider-container {
+  touch-action: pan-y pinch-zoom;
+  display: flex;
+  gap: 1rem;
+}
+
+.slide {
+  flex: 0 0 100%;
+  min-width: 0;
+
+  @media (width >= 768px) {
+    flex: 0 0 calc(50% - 0.5rem);
+  }
+
+  @media (width >= 1024px) {
+    flex: 0 0 calc(33.333% - 0.667rem);
+  }
+}
+
+.prev-button,
+.next-button {
+  cursor: pointer;
+
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  width: 2.5rem;
+  height: 2.5rem;
+  border: none;
+  border-radius: 50%;
+
+  color: hsl(var(--foreground));
+
+  background: hsl(var(--muted) / 80%);
+
+  transition: all 0.3s;
+
+  @media (width >= 768px) {
+    display: flex;
+  }
+}
+
+.prev-button {
+  left: 0;
+}
+
+.next-button {
+  right: 0;
+}
+
+.prev-button:disabled,
+.next-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.3;
+}
+
+.prev-button:hover:not(:disabled),
+.next-button:hover:not(:disabled) {
+  color: hsl(var(--primary));
+  background: hsl(var(--muted));
+}
+
+.prev-button svg,
+.next-button svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.dots {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.dot {
+  cursor: pointer;
+
+  width: 0.5rem;
+  height: 0.5rem;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+
+  background: hsl(var(--muted-foreground) / 30%);
+
+  transition: all 0.3s;
+
+  &.active {
+    transform: scale(1.2);
+    background: hsl(var(--primary));
+  }
+}

@@ -1,14 +1,10 @@
 'use client';
 
 import classNames from 'classnames/bind';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
 import { useSectionReveal } from '@/hooks/use-section-reveal';
 import { portfolioConfig } from './portfolio.config';
 import { Heading } from '@/components/heading/heading';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import { Carousel } from '@/components/carousel/carousel';
 import styles from './portfolio.module.css';
 
 const cx = classNames.bind(styles);
@@ -27,20 +23,20 @@ export function Portfolio() {
         <Heading as="h2" id="portfolio-title" gradient>
           Portfolio
         </Heading>
-        <Swiper
-          modules={[Navigation, Pagination]}
-          spaceBetween={16}
-          slidesPerView={1}
-          navigation
-          pagination={{ clickable: true }}
-          breakpoints={{
-            768: { slidesPerView: 2, slidesPerGroup: 1 },
-            1024: { slidesPerView: 3, slidesPerGroup: 1 },
-          }}
-        >
-          {portfolioConfig.map((project) => (
-            <SwiperSlide key={project.title}>
-              <div className={cx('card')}>
+        <div className={cx('carousel-wrapper')}>
+          <Carousel
+            options={{
+              align: 'center',
+              slidesToScroll: 1,
+              containScroll: 'trimSnaps',
+              breakpoints: {
+                '(min-width: 768px)': { slidesToScroll: 2 },
+                '(min-width: 1024px)': { slidesToScroll: 3 },
+              },
+            }}
+          >
+            {portfolioConfig.map((project) => (
+              <div className={cx('card')} key={project.title}>
                 <Heading as="h3" className="portfolio-heading">
                   {project.title}
                 </Heading>
@@ -73,9 +69,9 @@ export function Portfolio() {
                   </a>
                 </div>
               </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+            ))}
+          </Carousel>
+        </div>
       </div>
     </section>
   );
