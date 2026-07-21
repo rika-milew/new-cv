@@ -1,13 +1,18 @@
 .container {
-  max-width: 64rem;
+  width: 100%;
+  max-width: 100%;
   padding-top: 6rem;
   padding-bottom: 6rem;
+
+  @media screen and (width >= 1024px) {
+    max-width: 64rem;
+  }
 }
 
 .cards-container {
   display: grid;
   grid-template-columns: 1fr;
-  column-gap: 2rem;
+  gap: 1.5rem 2rem;
 
   & > * {
     min-width: 0;
@@ -15,12 +20,10 @@
 
   @media screen and (width >= 650px) {
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 2rem;
   }
 
   @media screen and (width >= 890px) {
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem 2rem;
   }
 }
 

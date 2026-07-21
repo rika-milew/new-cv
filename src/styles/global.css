@@ -20,9 +20,12 @@ body {
 
   overflow: hidden;
   display: grid;
+  grid-template-columns: 100%;
   grid-template-rows: 1fr auto;
 
+  box-sizing: border-box;
   width: 100%;
+  max-width: 100%;
   min-height: 100vh;
 
   background: hsl(var(--background));
@@ -38,6 +41,10 @@ body.lock {
   margin: 0 auto;
   padding-right: 1rem;
   padding-left: 1rem;
+
+  @media (width >= 1024px) {
+    max-width: 64rem;
+  }
 }
 
 .section {

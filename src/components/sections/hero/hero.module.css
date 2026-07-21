@@ -23,7 +23,12 @@
 }
 
 .container {
-  max-width: 52rem;
+  width: 100%;
+  max-width: 100%;
+
+  @media screen and (width >= 1024px) {
+    max-width: 52rem;
+  }
 }
 
 .hero-text {
