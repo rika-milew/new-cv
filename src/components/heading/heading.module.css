@@ -106,12 +106,20 @@
     background-size: 100% 100%;
     animation: none;
   }
+
+  .h1 {
+    will-change: auto;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .gradient {
     background-size: 100% 100%;
     animation: none;
+  }
+
+  .h1 {
+    will-change: auto;
   }
 }
 
