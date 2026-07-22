@@ -5,7 +5,7 @@ import { BREAKPOINTS } from '@/constants';
 import type { RefObject } from 'react';
 
 function isMobile(): boolean {
-  return window.innerWidth < BREAKPOINTS.MOBILE;
+  return window.innerWidth < BREAKPOINTS.TABLET;
 }
 
 export function useSectionReveal(): [RefObject<HTMLElement | null>, boolean] {
