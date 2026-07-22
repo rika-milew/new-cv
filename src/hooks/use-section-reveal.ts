@@ -1,13 +1,22 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { BREAKPOINTS } from '@/constants';
 import type { RefObject } from 'react';
+
+function isMobile(): boolean {
+  return window.innerWidth < BREAKPOINTS.MOBILE;
+}
 
 export function useSectionReveal(): [RefObject<HTMLElement | null>, boolean] {
   const ref = useRef<HTMLElement>(null);
   const [isRevealed, setIsRevealed] = useState(false);
 
   useEffect(() => {
+    if (isMobile()) {
+      return;
+    }
+
     const element = ref.current;
     if (!element || isRevealed) {
       return;

@@ -26,18 +26,7 @@
   font-size: 1.875rem;
   font-weight: 700;
   line-height: 2.25rem;
-  color: transparent;
-
-  background: linear-gradient(
-    270deg,
-    hsl(271deg 91% 65%),
-    hsl(270deg 95% 75%),
-    hsl(239deg 84% 67%),
-    hsl(271deg 91% 65%)
-  );
-  background-clip: text;
-
-  -webkit-text-fill-color: transparent;
+  color: hsl(var(--primary));
 
   @media (width >= 768px) {
     font-size: 2.25rem;
@@ -85,20 +74,24 @@
 
 .gradient {
   will-change: background-position;
+  color: hsl(var(--primary));
 
-  color: transparent;
+  @supports (background-clip: text) or (-webkit-background-clip: text) {
+    color: transparent;
 
-  background: linear-gradient(
-    270deg,
-    hsl(271deg 91% 65%),
-    hsl(270deg 95% 75%),
-    hsl(239deg 84% 67%),
-    hsl(271deg 91% 65%)
-  );
-  background-clip: text;
-  background-size: 300% 300%;
+    background: linear-gradient(
+      270deg,
+      hsl(271deg 91% 65%),
+      hsl(270deg 95% 75%),
+      hsl(239deg 84% 67%),
+      hsl(271deg 91% 65%)
+    );
+    background-clip: text;
+    background-clip: text;
+    background-size: 300% 300%;
 
-  -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
 }
 
 @supports (-webkit-touch-callout: none) {

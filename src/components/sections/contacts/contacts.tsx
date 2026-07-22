@@ -24,7 +24,7 @@ export function Contacts() {
       aria-labelledby="contacts-title"
     >
       <div className={cx('global-container', styles.container)}>
-        <Heading as="h2" id="contacts-title">
+        <Heading as="h2" id="contacts-title" gradient>
           {contactsConfig.title}
         </Heading>
         <div className={cx('contacts-container')}>
