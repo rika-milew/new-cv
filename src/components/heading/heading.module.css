@@ -4,8 +4,6 @@
 }
 
 .h1 {
-  will-change: transform, opacity;
-
   margin-bottom: 0.25rem;
 
   font-size: clamp(2.5rem, 10vw, 6rem);
