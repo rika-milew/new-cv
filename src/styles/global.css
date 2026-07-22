@@ -21,7 +21,7 @@ body {
   position: relative;
 
   display: grid;
-  grid-template-columns: 100%;
+  grid-template-columns: minmax(0, 100%);
   grid-template-rows: 1fr auto;
 
   box-sizing: border-box;
