@@ -13,6 +13,8 @@ body {
 body {
   min-height: 100%;
   font-family: var(--font-inter), sans-serif;
+
+  -webkit-overflow-scrolling: touch;
 }
 
 #root {
