@@ -19,7 +19,7 @@ export function Skills() {
       aria-labelledby="skills-title"
     >
       <div className={cx('global-container', styles.container)}>
-        <Heading as="h2" id="skills-title">
+        <Heading as="h2" id="skills-title" gradient>
           Skills & Technologies
         </Heading>
         <div className={cx('cards-container')}>

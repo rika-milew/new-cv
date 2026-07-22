@@ -19,7 +19,7 @@ export function About() {
       aria-labelledby="about-title"
     >
       <div className={cx('global-container', styles.container)}>
-        <Heading as="h2" id="about-title">
+        <Heading as="h2" id="about-title" gradient>
           About Me
         </Heading>
         <div className={cx('about-content', styles.content)}>
