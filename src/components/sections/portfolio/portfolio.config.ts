@@ -45,7 +45,7 @@ export const portfolioConfig: PortfolioItem[] = [
     description:
       'Web application for preparing for technical interviews with interactive widgets.',
     badges: ['React', 'Typescript', 'Node.js', 'Zustand', 'REST API'],
-    github: 'https://github.com/ansivgit/fe-course-2025Q3-final',
+    github: 'https://github.com/rika-milew/fe-course-2025Q3-final',
     demo: 'https://tandem-growlab.vercel.app/',
   },
   {
