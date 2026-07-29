@@ -6,10 +6,16 @@ import type { MouseEvent } from 'react';
 export function useSmoothScroll(): (e: MouseEvent, href: string) => void {
   const router = useRouter();
 
-  const scrollTo: (e: MouseEvent, href: string) => void = (e, href) => {
+  return (e: MouseEvent, href: string) => {
     e.preventDefault();
-    router.push(href);
-  };
+    const id = href.split('#')[1];
 
-  return scrollTo;
+    if (id) {
+      const element = document.getElementById(id);
+      element?.scrollIntoView({ behavior: 'smooth' });
+      router.push(href, { scroll: false });
+    } else {
+      router.push(href);
+    }
+  };
 }
