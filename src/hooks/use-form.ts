@@ -5,12 +5,14 @@ import emailjs from '@emailjs/browser';
 import { getEmailJSConfig } from '@/components/sections/contacts/contact-form/emailjs.config';
 import type { FormStatus } from '@/components/sections/contacts/contact-form/form-status.config';
 import type { SyntheticEvent, RefObject } from 'react';
+import { validateForm } from '@/utils/validate-form';
 
 type UseFormReturn = {
   formRef: RefObject<HTMLFormElement | null>;
   isLoading: boolean;
   status: FormStatus;
   isModalOpen: boolean;
+  validationMessage: string;
   handleSubmit: (e: SyntheticEvent<HTMLFormElement>) => void;
   closeModal: () => void;
 };
@@ -20,10 +22,18 @@ export function useForm(): UseFormReturn {
   const [isLoading, setIsLoading] = useState(false);
   const [status, setStatus] = useState<FormStatus>('idle');
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [validationMessage, setValidationMessage] = useState('');
 
   const handleSubmit = useCallback((e: SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!formRef.current) {
+      return;
+    }
+
+    const error = validateForm(formRef.current);
+    if (error) {
+      setValidationMessage(error);
+      setIsModalOpen(true);
       return;
     }
 
@@ -36,6 +46,7 @@ export function useForm(): UseFormReturn {
       console.error('EmailJS config is empty');
       setIsLoading(false);
       setStatus('error');
+      setValidationMessage('Service configuration error');
       setIsModalOpen(true);
       return;
     }
@@ -50,11 +61,13 @@ export function useForm(): UseFormReturn {
       .then(() => {
         setStatus('success');
         setIsModalOpen(true);
+        setValidationMessage('');
         formRef.current?.reset();
       })
       .catch((error: unknown): void => {
         setStatus('error');
         setIsModalOpen(true);
+        setValidationMessage('Failed to send message. Please try again.');
         console.error('EmailJS error:', error);
       })
       .finally(() => {
@@ -65,6 +78,7 @@ export function useForm(): UseFormReturn {
   const closeModal = useCallback((): void => {
     setIsModalOpen(false);
     setStatus('idle');
+    setValidationMessage('');
   }, []);
 
   return {
@@ -72,6 +86,7 @@ export function useForm(): UseFormReturn {
     isLoading,
     status,
     isModalOpen,
+    validationMessage,
     handleSubmit,
     closeModal,
   };
