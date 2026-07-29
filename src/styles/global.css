@@ -1,12 +1,13 @@
 html {
   scroll-behavior: smooth;
+  text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 html,
 body {
   width: 100%;
   margin: 0;
-  text-size-adjust: none;
 }
 
 body {
@@ -14,7 +15,7 @@ body {
   min-height: 100dvh;
   font-family: var(--font-inter), sans-serif;
 
-  -webkit-overflow-scrolling: touch;
+  -webkit-tap-highlight-color: transparent;
 }
 
 #root {
@@ -34,7 +35,15 @@ body {
 
 body.lock {
   overflow: hidden;
+  width: 100%;
   padding-right: var(--scrollbar-width, 0);
+}
+
+a,
+button {
+  touch-action: manipulation;
+
+  -webkit-tap-highlight-color: transparent;
 }
 
 .global-container {

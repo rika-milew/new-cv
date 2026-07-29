@@ -5,6 +5,8 @@ import { useEffect } from 'react';
 export function useBodyScroll(isLocked: boolean): void {
   useEffect(() => {
     if (!isLocked) {
+      document.body.classList.remove('lock');
+      document.documentElement.style.removeProperty('--scrollbar-width');
       return;
     }
 
