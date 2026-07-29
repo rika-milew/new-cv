@@ -4,7 +4,8 @@ import { useState, useEffect, useCallback, useRef } from 'react';
 import Link from 'next/link';
 import classNames from 'classnames/bind';
 import { useBodyScroll } from '@/hooks/use-body-scroll';
-import { BREAKPOINTS, NAV_ITEMS } from '@/constants';
+import { useSmoothScroll } from '@/hooks/use-smooth-scroll';
+import { ANCHORS, BREAKPOINTS, NAV_ITEMS } from '@/constants';
 import type { MouseEvent, TouchEvent } from 'react';
 import styles from './header.module.css';
 
@@ -14,12 +15,23 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const burgerRef = useRef<HTMLButtonElement>(null);
+  const scrollTo = useSmoothScroll();
 
   useBodyScroll(isMenuOpen);
 
   const closeMenu = useCallback(() => {
     setIsMenuOpen(false);
   }, []);
+
+  const handleLinkClick = useCallback(
+    (e: MouseEvent, href: string) => {
+      closeMenu();
+      if (href !== ANCHORS.HOME) {
+        scrollTo(e, href);
+      }
+    },
+    [closeMenu, scrollTo],
+  );
 
   const toggleMenu = (e: MouseEvent | TouchEvent) => {
     e.preventDefault();
@@ -69,15 +81,15 @@ export function Header() {
 
     return () => {
       window.removeEventListener('resize', handleResize);
-      document.addEventListener('click', handleClickOutside, true);
-      document.addEventListener('touchend', handleClickOutside, true);
+      document.removeEventListener('click', handleClickOutside, true);
+      document.removeEventListener('touchend', handleClickOutside, true);
     };
   }, [isMenuOpen, closeMenu]);
 
   return (
     <header className={cx('header', { active: isMenuOpen })}>
       <div className={cx('global-container', styles.container)}>
-        <Link href="/" className={cx('logo')}>
+        <Link href="/" className={cx('logo')} onClick={closeMenu}>
           &lt;Dev /&gt;
         </Link>
 
@@ -88,7 +100,7 @@ export function Header() {
                 <Link
                   href={item.href}
                   className={cx('link')}
-                  onClick={closeMenu}
+                  onClick={(e) => handleLinkClick(e, item.href)}
                 >
                   {item.label}
                 </Link>

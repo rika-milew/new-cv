@@ -4,12 +4,21 @@ export const BREAKPOINTS = {
   DESKTOP: 1280,
 } as const;
 
+export const ANCHORS = {
+  HOME: '/',
+  ABOUT: '/#about',
+  SKILLS: '/#skills',
+  PORTFOLIO: '/#portfolio',
+  EDUCATION: '/#education',
+  CONTACTS: '/#contacts',
+} as const;
+
 export const NAV_ITEMS = [
-  { href: '/#about', label: 'About' },
-  { href: '/#skills', label: 'Skills' },
-  { href: '/#portfolio', label: 'Portfolio' },
-  { href: '/#education', label: 'Education' },
-  { href: '/#contacts', label: 'Contacts' },
+  { href: ANCHORS.ABOUT, label: 'About' },
+  { href: ANCHORS.SKILLS, label: 'Skills' },
+  { href: ANCHORS.PORTFOLIO, label: 'Portfolio' },
+  { href: ANCHORS.EDUCATION, label: 'Education' },
+  { href: ANCHORS.CONTACTS, label: 'Contacts' },
 ] as const;
 
 export const STARS = {
