@@ -64,8 +64,8 @@ export function Carousel({
     };
   }, [carouselApi]);
 
-  const snaps = carouselApi?.scrollSnapList() || [];
-  const activeIndex = carouselApi?.selectedScrollSnap() || 0;
+  const snaps = carouselApi?.scrollSnapList() ?? [];
+  const activeIndex = carouselApi?.selectedScrollSnap() ?? 0;
 
   const isReady = !!carouselApi;
 
