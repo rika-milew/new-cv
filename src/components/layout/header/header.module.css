@@ -49,6 +49,7 @@
 }
 
 .burger {
+  touch-action: manipulation;
   cursor: pointer;
 
   position: relative;
@@ -61,6 +62,9 @@
   border: none;
 
   background: none;
+
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
 
   &::before,
   &::after {
@@ -104,6 +108,8 @@
 }
 
 .menu {
+  touch-action: auto;
+
   position: fixed;
   top: 3.25rem;
   left: 0;
@@ -120,6 +126,8 @@
   transition:
     right 0.5s cubic-bezier(0.4, 0, 0.2, 1),
     opacity 0.5s ease;
+
+  -webkit-tap-highlight-color: transparent;
 
   &.active {
     z-index: 100;

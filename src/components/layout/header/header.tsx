@@ -5,6 +5,7 @@ import Link from 'next/link';
 import classNames from 'classnames/bind';
 import { useBodyScroll } from '@/hooks/use-body-scroll';
 import { BREAKPOINTS, NAV_ITEMS } from '@/constants';
+import type { MouseEvent, TouchEvent } from 'react';
 import styles from './header.module.css';
 
 const cx = classNames.bind(styles);
@@ -20,7 +21,9 @@ export function Header() {
     setIsMenuOpen(false);
   }, []);
 
-  const toggleMenu = () => {
+  const toggleMenu = (e: MouseEvent | TouchEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
     setIsMenuOpen((previous) => !previous);
   };
 
@@ -31,14 +34,28 @@ export function Header() {
       }
     };
 
-    const handleClickOutside = (event: MouseEvent): void => {
-      const target = event.target;
+    const handleClickOutside = (event: Event): void => {
+      const { target } = event;
+
+      if (!isMenuOpen || !target) {
+        return;
+      }
+
+      if (!(target instanceof Node)) {
+        return;
+      }
+
+      if (target instanceof Element) {
+        const linkElement = target.closest('a');
+        if (linkElement && menuRef.current?.contains(target)) {
+          setTimeout(() => closeMenu(), 100);
+          return;
+        }
+      }
 
       if (
-        isMenuOpen &&
         menuRef.current &&
         burgerRef.current &&
-        target instanceof Node &&
         !menuRef.current.contains(target) &&
         !burgerRef.current.contains(target)
       ) {
@@ -47,11 +64,13 @@ export function Header() {
     };
 
     window.addEventListener('resize', handleResize);
-    document.addEventListener('click', handleClickOutside);
+    document.addEventListener('click', handleClickOutside, true);
+    document.addEventListener('touchend', handleClickOutside, true);
 
     return () => {
       window.removeEventListener('resize', handleResize);
-      document.removeEventListener('click', handleClickOutside);
+      document.addEventListener('click', handleClickOutside, true);
+      document.addEventListener('touchend', handleClickOutside, true);
     };
   }, [isMenuOpen, closeMenu]);
 
