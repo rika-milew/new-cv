@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import type { ReactNode, MouseEvent } from 'react';
 import classNames from 'classnames/bind';
