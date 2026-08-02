@@ -10,11 +10,28 @@ import styles from './contact-form.module.css';
 const cx = classNames.bind(styles);
 
 export function ContactForm() {
-  const { formRef, isLoading, status, isModalOpen, handleSubmit, closeModal } =
-    useForm();
+  const {
+    formRef,
+    isLoading,
+    status,
+    isModalOpen,
+    validationMessage,
+    handleSubmit,
+    closeModal,
+  } = useForm();
 
-  const modalData =
-    status === 'success' ? MODAL_MESSAGES.success : MODAL_MESSAGES.error;
+  const getModalData = () => {
+    if (status === 'success') {
+      return MODAL_MESSAGES.success;
+    }
+    if (status === 'error' || validationMessage) {
+      return {
+        ...MODAL_MESSAGES.error,
+        message: validationMessage || MODAL_MESSAGES.error.message,
+      };
+    }
+    return null;
+  };
 
   return (
     <>
@@ -77,7 +94,7 @@ export function ContactForm() {
         </Button>
       </form>
 
-      <Modal isOpen={isModalOpen} data={modalData} onClose={closeModal} />
+      <Modal isOpen={isModalOpen} data={getModalData()} onClose={closeModal} />
     </>
   );
 }

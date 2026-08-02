@@ -11,7 +11,6 @@
   background-color: hsl(var(--background));
 
   &.active {
-    position: relative;
     z-index: 100;
   }
 }
