@@ -9,6 +9,11 @@ import styles from './contact-form.module.css';
 
 const cx = classNames.bind(styles);
 
+const FORM_FIELDS = [
+  { id: 'name', type: 'text', placeholder: 'Your name', autoComplete: 'name' },
+  { id: 'email', type: 'email', placeholder: 'Email', autoComplete: 'email' },
+] as const;
+
 export function ContactForm() {
   const {
     formRef,
@@ -42,38 +47,24 @@ export function ContactForm() {
         onSubmit={handleSubmit}
         noValidate
       >
-        <div className={cx('form-item')}>
-          <label htmlFor="name" className={cx('form-label')}>
-            Name <span aria-hidden="true">*</span>
-          </label>
-          <input
-            id="name"
-            type="text"
-            name="name"
-            placeholder="Your name"
-            required
-            aria-required="true"
-            autoComplete="name"
-            className={cx('input')}
-          />
-        </div>
-
-        <div className={cx('form-item')}>
-          <label htmlFor="email" className={cx('form-label')}>
-            Email <span aria-hidden="true">*</span>
-          </label>
-          <input
-            id="email"
-            type="email"
-            name="email"
-            placeholder="Email"
-            required
-            aria-required="true"
-            autoComplete="email"
-            className={cx('input')}
-          />
-        </div>
-
+        {FORM_FIELDS.map(({ id, type, placeholder, autoComplete }) => (
+          <div key={id} className={cx('form-item')}>
+            <label htmlFor={id} className={cx('form-label')}>
+              {id.charAt(0).toUpperCase() + id.slice(1)}{' '}
+              <span aria-hidden="true">*</span>
+            </label>
+            <input
+              id={id}
+              type={type}
+              name={id}
+              placeholder={placeholder}
+              required
+              aria-required="true"
+              autoComplete={autoComplete}
+              className={cx('input')}
+            />
+          </div>
+        ))}
         <div className={cx('form-item')}>
           <label htmlFor="message" className={cx('form-label')}>
             Message <span aria-hidden="true">*</span>
