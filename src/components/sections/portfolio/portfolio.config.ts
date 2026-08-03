@@ -43,7 +43,7 @@ export const portfolioConfig: PortfolioItem[] = [
   {
     title: 'Tandem App',
     description:
-      'Web application for preparing for technical interviews with interactive widgets.',
+      'A web app designed to help you prepare for technical interviews using interactive widgets.',
     badges: ['React', 'Typescript', 'Node.js', 'Zustand', 'REST API'],
     github: 'https://github.com/rika-milew/fe-course-2025Q3-final',
     demo: 'https://tandem-growlab.vercel.app/',
