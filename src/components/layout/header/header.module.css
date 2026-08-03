@@ -108,6 +108,7 @@
 }
 
 .menu {
+  pointer-events: none;
   touch-action: auto;
 
   position: fixed;
@@ -130,6 +131,8 @@
   -webkit-tap-highlight-color: transparent;
 
   &.active {
+    pointer-events: auto;
+
     z-index: 100;
 
     display: block;
