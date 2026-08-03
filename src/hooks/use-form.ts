@@ -6,6 +6,7 @@ import { getEmailJSConfig } from '@/components/sections/contacts/contact-form/em
 import type { FormStatus } from '@/components/sections/contacts/contact-form/form-status.config';
 import type { SyntheticEvent, RefObject } from 'react';
 import { validateForm } from '@/utils/validate-form';
+import type { EmailJSConfig } from '@/components/sections/contacts/contact-form/emailjs.config';
 
 type UseFormReturn = {
   formRef: RefObject<HTMLFormElement | null>;
@@ -15,6 +16,15 @@ type UseFormReturn = {
   validationMessage: string;
   handleSubmit: (e: SyntheticEvent<HTMLFormElement>) => void;
   closeModal: () => void;
+};
+
+const createEmailConfig = (): EmailJSConfig => {
+  const config = getEmailJSConfig();
+  const { SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY } = config;
+  if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
+    throw new Error('EmailJS config is empty');
+  }
+  return { SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY };
 };
 
 export function useForm(): UseFormReturn {
@@ -40,39 +50,30 @@ export function useForm(): UseFormReturn {
     setIsLoading(true);
     setStatus('sending');
 
-    const config = getEmailJSConfig();
-
-    if (!config.SERVICE_ID || !config.TEMPLATE_ID || !config.PUBLIC_KEY) {
-      console.error('EmailJS config is empty');
+    try {
+      const { SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY } = createEmailConfig();
+      emailjs
+        .sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, PUBLIC_KEY)
+        .then(() => {
+          setStatus('success');
+          setValidationMessage('');
+          formRef.current?.reset();
+        })
+        .catch((error: unknown) => {
+          setStatus('error');
+          setValidationMessage('Failed to send message. Please try again.');
+          console.error('EmailJS error:', error);
+        })
+        .finally(() => {
+          setIsLoading(false);
+          setIsModalOpen(true);
+        });
+    } catch {
       setIsLoading(false);
       setStatus('error');
       setValidationMessage('Service configuration error');
       setIsModalOpen(true);
-      return;
     }
-
-    emailjs
-      .sendForm(
-        config.SERVICE_ID,
-        config.TEMPLATE_ID,
-        formRef.current,
-        config.PUBLIC_KEY,
-      )
-      .then(() => {
-        setStatus('success');
-        setIsModalOpen(true);
-        setValidationMessage('');
-        formRef.current?.reset();
-      })
-      .catch((error: unknown): void => {
-        setStatus('error');
-        setIsModalOpen(true);
-        setValidationMessage('Failed to send message. Please try again.');
-        console.error('EmailJS error:', error);
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
   }, []);
 
   const closeModal = useCallback((): void => {
