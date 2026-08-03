@@ -108,7 +108,6 @@
 }
 
 .menu {
-  pointer-events: none;
   touch-action: auto;
 
   position: fixed;
@@ -122,27 +121,29 @@
 
   text-align: center;
 
+  visibility: hidden;
   opacity: 0;
 
   transition:
     right 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 0.5s ease;
+    opacity 0.5s ease,
+    visibility 0.5s ease;
 
   -webkit-tap-highlight-color: transparent;
 
   &.active {
-    pointer-events: auto;
-
     z-index: 100;
 
     display: block;
 
+    visibility: visible;
     opacity: 1;
     background: hsl(var(--background));
 
     transition:
       right 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-      opacity 0.5s ease;
+      opacity 0.5s ease,
+      visibility 0.5s ease;
   }
 }
 
@@ -207,6 +208,7 @@
 
     text-align: center;
 
+    visibility: visible;
     opacity: 1;
   }
 
