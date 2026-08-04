@@ -1,4 +1,6 @@
 .slider {
+  touch-action: pan-y;
+
   position: relative;
 
   overflow: hidden;
@@ -8,6 +10,8 @@
   margin: 0 auto;
   padding-right: 1rem;
   padding-left: 1rem;
+
+  -webkit-overflow-scrolling: touch;
 }
 
 .slider-viewport {
@@ -19,6 +23,8 @@
   touch-action: pan-y pinch-zoom;
   display: flex;
   gap: 1rem;
+
+  -webkit-user-drag: none;
 }
 
 .slide {
@@ -93,6 +99,8 @@
   display: flex;
   gap: 0.5rem;
   justify-content: center;
+
+  height: 0.6rem;
   margin-top: 1.5rem;
 }
 
