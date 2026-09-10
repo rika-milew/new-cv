@@ -14,11 +14,8 @@ export const ANCHORS = {
 } as const;
 
 export const NAV_ITEMS = [
-  { href: ANCHORS.ABOUT, label: 'About' },
-  { href: ANCHORS.SKILLS, label: 'Skills' },
-  { href: ANCHORS.PORTFOLIO, label: 'Portfolio' },
-  { href: ANCHORS.EDUCATION, label: 'Education' },
-  { href: ANCHORS.CONTACTS, label: 'Contacts' },
+  { href: '/', label: 'Home' },
+  { href: '/portfolio', label: 'Portfolio' },
 ] as const;
 
 export const STARS = {

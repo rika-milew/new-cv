@@ -2,10 +2,10 @@
 
 import { useState, useEffect, useCallback, useRef } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import classNames from 'classnames/bind';
 import { useBodyScroll } from '@/hooks/use-body-scroll';
-import { useSmoothScroll } from '@/hooks/use-smooth-scroll';
-import { ANCHORS, BREAKPOINTS, NAV_ITEMS } from '@/constants';
+import { BREAKPOINTS, NAV_ITEMS } from '@/constants';
 import type { MouseEvent, TouchEvent } from 'react';
 import styles from './header.module.css';
 
@@ -15,23 +15,13 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const burgerRef = useRef<HTMLButtonElement>(null);
-  const scrollTo = useSmoothScroll();
+  const pathname = usePathname();
 
   useBodyScroll(isMenuOpen);
 
   const closeMenu = useCallback(() => {
     setIsMenuOpen(false);
   }, []);
-
-  const handleLinkClick = useCallback(
-    (e: MouseEvent, href: string) => {
-      closeMenu();
-      if (href !== ANCHORS.HOME) {
-        scrollTo(e, href);
-      }
-    },
-    [closeMenu, scrollTo],
-  );
 
   const toggleMenu = (e: MouseEvent | TouchEvent) => {
     e.preventDefault();
@@ -99,8 +89,8 @@ export function Header() {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className={cx('link')}
-                  onClick={(e) => handleLinkClick(e, item.href)}
+                  className={cx('link', { active: pathname === item.href })}
+                  onClick={closeMenu}
                 >
                   {item.label}
                 </Link>
