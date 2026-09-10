@@ -7,15 +7,13 @@ import { Contacts } from '@/components/sections/contacts/contacts';
 
 export function Home() {
   return (
-    <>
-      <main>
-        <Hero />
-        <About />
-        <Skills />
-        <Portfolio />
-        <Education />
-        <Contacts />
-      </main>
-    </>
+    <main>
+      <Hero />
+      <About />
+      <Skills />
+      <Portfolio />
+      <Education />
+      <Contacts />
+    </main>
   );
 }
