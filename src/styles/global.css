@@ -27,7 +27,7 @@ body {
 
   display: grid;
   grid-template-columns: minmax(0, 100%);
-  grid-template-rows: 1fr auto;
+  grid-template-rows: auto 1fr auto;
 
   box-sizing: border-box;
   width: 100%;
