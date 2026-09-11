@@ -6,6 +6,7 @@ import { portfolioConfig } from './portfolio.config';
 import { Heading } from '@/components/heading/heading';
 import { Carousel } from '@/components/carousel/carousel';
 import { ProjectCard } from '@/components/project-card/project-card';
+import { FEATURED_PROJECTS_COUNT } from '@/constants';
 import styles from './portfolio.module.css';
 
 const cx = classNames.bind(styles);
@@ -36,9 +37,11 @@ export function Portfolio() {
               },
             }}
           >
-            {portfolioConfig.map((project) => (
-              <ProjectCard key={project.title} project={project} />
-            ))}
+            {portfolioConfig
+              .slice(0, FEATURED_PROJECTS_COUNT)
+              .map((project) => (
+                <ProjectCard key={project.title} project={project} />
+              ))}
           </Carousel>
         </div>
       </div>

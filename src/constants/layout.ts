@@ -26,3 +26,5 @@ export const STARS = {
   MIN_DURATION: 2,
   MAX_DELAY: 5,
 } as const;
+
+export const FEATURED_PROJECTS_COUNT = 6;
