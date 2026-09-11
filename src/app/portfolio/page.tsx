@@ -1,4 +1,4 @@
-import { PortfolioView } from '@/views/portfiolo';
+import { PortfolioView } from '@/views/portfolio/portfiolo';
 
 export default function PortfolioPage() {
   return <PortfolioView />;
