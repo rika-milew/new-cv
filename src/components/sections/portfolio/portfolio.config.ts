@@ -1,4 +1,4 @@
-type PortfolioItem = {
+export type PortfolioItem = {
   title: string;
   description: string;
   badges: string[];
@@ -81,3 +81,7 @@ export const portfolioConfig: PortfolioItem[] = [
     demo: 'https://rika-milew.github.io/nft/',
   },
 ];
+
+export const allTechnologies = [
+  ...new Set(portfolioConfig.flatMap((project) => project.badges)),
+].toSorted();

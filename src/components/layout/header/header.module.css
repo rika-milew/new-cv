@@ -1,6 +1,5 @@
 .header {
   position: sticky;
-  position: sticky;
   z-index: 10;
   top: 0;
 
@@ -174,6 +173,11 @@
   text-decoration: none;
 
   transition: color var(--transition-duration) var(--transition-timing-function);
+
+  &.active {
+    position: relative;
+    color: hsl(var(--accent));
+  }
 }
 
 @media (hover: hover) and (pointer: fine) {

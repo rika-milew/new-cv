@@ -1,1 +1,7 @@
-export { ANCHORS, BREAKPOINTS, NAV_ITEMS, STARS } from './layout';
+export {
+  ANCHORS,
+  BREAKPOINTS,
+  NAV_ITEMS,
+  STARS,
+  FEATURED_PROJECTS_COUNT,
+} from './layout';

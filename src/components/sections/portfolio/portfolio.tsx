@@ -5,6 +5,8 @@ import { useSectionReveal } from '@/hooks/use-section-reveal';
 import { portfolioConfig } from './portfolio.config';
 import { Heading } from '@/components/heading/heading';
 import { Carousel } from '@/components/carousel/carousel';
+import { ProjectCard } from '@/components/project-card/project-card';
+import { FEATURED_PROJECTS_COUNT } from '@/constants';
 import styles from './portfolio.module.css';
 
 const cx = classNames.bind(styles);
@@ -35,41 +37,11 @@ export function Portfolio() {
               },
             }}
           >
-            {portfolioConfig.map((project) => (
-              <div className={cx('card')} key={project.title}>
-                <Heading as="h3" className="portfolio-heading">
-                  {project.title}
-                </Heading>
-                <p className={cx('description')}>{project.description}</p>
-                <div className={cx('badges-container')}>
-                  {project.badges.map((badge) => (
-                    <div key={badge} className={cx('badge')}>
-                      {badge}
-                    </div>
-                  ))}
-                </div>
-                <div className={cx('links')}>
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={cx('link')}
-                  >
-                    <div className={cx('icon', 'github')} />
-                    <span>GitHub</span>
-                  </a>
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={cx('link')}
-                  >
-                    <div className={cx('icon', 'demo')} />
-                    <span>Demo</span>
-                  </a>
-                </div>
-              </div>
-            ))}
+            {portfolioConfig
+              .slice(0, FEATURED_PROJECTS_COUNT)
+              .map((project) => (
+                <ProjectCard key={project.title} project={project} />
+              ))}
           </Carousel>
         </div>
       </div>
