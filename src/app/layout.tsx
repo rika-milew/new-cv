@@ -23,7 +23,7 @@ export const viewport = {
 
 export const metadata: Metadata = {
   title: 'Erika Milevskaya | Frontend Developer',
-  description: 'Web-developer, about me, my works',
+  description: 'Web developer, about me, my works',
   icons: {
     icon: '/icons/icon-planet.svg',
   },

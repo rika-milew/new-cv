@@ -51,6 +51,9 @@ export function About() {
             <div className={cx('about-info')}>
               <span>📍 Minsk, Belarus</span>
               <span>💼 1+ year of experience</span>
+              <span>🏆 10+ projects shipped</span>
+              <span>🌍 English — B2</span>
+              <span>⚡ React · TypeScript</span>
               <span>🚀 Open to work</span>
             </div>
           </div>
