@@ -23,10 +23,11 @@ export function Hero() {
         <Heading as="h1" gradient animated>
           Erika Milevskaya
         </Heading>
-        <p className={cx('hero-heading')}>Web Developer</p>
+        <p className={cx('hero-heading')}>Software Engineer</p>
+        <p className={cx('hero-technologies')}>React · TypeScript · Node.js</p>
         <p className={cx('hero-description')}>
-          Building interfaces that inspire. React, TypeScript, and a touch of
-          cosmic magic ✨
+          I build clean, functional applications and care about how systems work
+          under the hood ✨
         </p>
         <div className={cx('buttons-container')}>
           <Button
