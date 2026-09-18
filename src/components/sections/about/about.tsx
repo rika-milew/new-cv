@@ -35,24 +35,26 @@ export function About() {
           </div>
           <div className={cx('about-text')}>
             <p>
-              Frontend developer focused on building modern web applications
-              with React and TypeScript. Currently developing personal projects
-              and improving frontend skills through hands-on practice. I care
-              about clean, maintainable code, component-driven architecture, and
-              creating smooth user experiences.
+              Web developer with a background in content management. I&apos;m
+              interested in how systems, data, and interfaces work together. I
+              build modern web applications with React and TypeScript, and
+              I&apos;m growing my backend skills with Node.js and databases. I
+              like turning messy ideas into structured, working systems &mdash;
+              whether it&apos;s an interface, an API, or a database.
             </p>
             <p>
-              Previous experience as a content manager helped me understand
-              website structure, UX flow, and content organization, which I now
-              apply in frontend development. I enjoy turning ideas into
-              functional interfaces and continuously improving performance and
-              structure.
+              My previous experience in content management gave me an
+              understanding of structure, UX flow, and information organization
+              &mdash; which I now apply to development. I care about clean code,
+              maintainable architecture, and building things that work reliably.
+              Currently looking for opportunities to contribute to real products
+              and grow as an engineer.
             </p>
             <div className={cx('about-info')}>
               <span>📍 Minsk, Belarus</span>
               <span>💼 1+ year of experience</span>
               <span>🏆 10+ projects shipped</span>
-              <span>🌍 English — B2</span>
+              <span>🌍 English &mdash; B2</span>
               <span>⚡ React · TypeScript</span>
               <span>🚀 Open to work</span>
             </div>

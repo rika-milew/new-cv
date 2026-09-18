@@ -63,10 +63,26 @@
   animation-delay: 0.8s;
 }
 
+.hero-technologies {
+  will-change: transform, opacity;
+
+  max-width: 32rem;
+  margin: 0 auto;
+  margin-bottom: 0.75rem;
+
+  font-size: 1.125rem;
+  color: hsl(var(--accent));
+
+  opacity: 0;
+
+  animation: fade-in 0.6s ease-out forwards;
+  animation-delay: 0.8s;
+}
+
 .hero-heading {
   will-change: transform, opacity;
 
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 
   font-family: var(--font-space-grotesk), sans-serif;
   font-size: 1.25rem;
