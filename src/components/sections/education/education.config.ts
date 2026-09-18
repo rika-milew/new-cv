@@ -6,16 +6,16 @@ type EducationItem = {
 };
 
 export const educationConfig: EducationItem[] = [
+  // {
+  //   year: '2014 — 2018',
+  //   establishment:
+  //     'Linguistic and Humanitarian College | The Branch of Minsk State Linguistic University',
+  //   description:
+  //     'Language Support of Socio-cultural Activities. Diploma with honors.',
+  //   icon: 'study',
+  // },
   {
-    year: '2014 — 2018',
-    establishment:
-      'Linguistic and Humanitarian College | The Branch of Minsk State Linguistic University',
-    description:
-      'Language Support of Socio-cultural Activities. Diploma with honors.',
-    icon: 'study',
-  },
-  {
-    year: '2018 — 2021',
+    year: '2016 — 2021',
     establishment:
       'Faculty of Intercultural Communication | Minsk State Linguistic University',
     description:
