@@ -22,8 +22,8 @@ export function About() {
         <Heading as="h2" id="about-title" gradient>
           About Me
         </Heading>
-        <div className={cx('about-content', styles.content)}>
-          <div className={cx('about-photo', styles.photo)}>
+        <div className={cx('about-content')}>
+          <div className={cx('about-photo')}>
             <Image
               src={photo}
               alt="Erika Milevskaya"
@@ -33,7 +33,7 @@ export function About() {
               priority
             />
           </div>
-          <div className={cx('about-text', styles.text)}>
+          <div className={cx('about-text')}>
             <p>
               Frontend developer focused on building modern web applications
               with React and TypeScript. Currently developing personal projects
@@ -48,7 +48,7 @@ export function About() {
               functional interfaces and continuously improving performance and
               structure.
             </p>
-            <div className={cx('about-info', styles.info)}>
+            <div className={cx('about-info')}>
               <span>📍 Minsk, Belarus</span>
               <span>💼 1+ year of experience</span>
               <span>🚀 Open to work</span>

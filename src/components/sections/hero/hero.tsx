@@ -20,7 +20,7 @@ export function Hero() {
       <Planet />
       <div className={cx('global-container', styles.container)}>
         <p className={cx('hero-text')}>Hello, I&apos;m</p>
-        <Heading as="h1" gradient>
+        <Heading as="h1" gradient animated>
           Erika Milevskaya
         </Heading>
         <p className={cx('hero-heading')}>Web Developer</p>
